@@ -84,7 +84,7 @@ header nav p {
 header nav a:any-link {
   color: currentcolor;
   font-weight: 300;
-  font-family: 'Adobe Clean', adobe-clean, 'Trebuchet MS', sans-serif;
+  font-family: var(--header-font-family);
   margin: 0 0 3px 10px;
 }
 
@@ -169,7 +169,7 @@ header nav .nav-sections ul > li {
   font-size: var(--body-font-size-s);
   color: black;
   font-weight: 300;
-  font-family: 'Adobe Clean', adobe-clean, 'Trebuchet MS', sans-serif;
+  font-family: var(--header-font-family);
   margin: 0 0 3px 10px;
   padding: 15px;
 }
@@ -312,7 +312,7 @@ header nav .nav-tools {
     font-size: var(--body-font-size-m);
     color: currentcolor;
     font-weight: 300;
-    font-family: 'Adobe Clean', adobe-clean, 'Trebuchet MS', sans-serif;
+    font-family: var(--header-font-family)
   }
 
 }
