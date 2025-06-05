@@ -95,6 +95,7 @@ header nav .nav-hamburger {
   display: flex;
   align-items: center;
   overflow: hidden;
+  cursor: pointer;
 }
 
 header nav .nav-hamburger button {
@@ -111,6 +112,14 @@ header nav .nav-hamburger button {
   white-space: initial;
   outline: 2px solid var(--background-color);
   outline-offset: 4px;
+  transition: all 0.1s linear, transform 0.1s linear;
+}
+
+/* when clicked, change the background color and outline color */
+header nav[aria-expanded='true'] .nav-hamburger button {
+  outline-offset: 10px;
+  margin-top: 18px;
+  transition: all 0.1s linear, transform 0.1s linear;
 }
 
 .nav-wrapper.nav-scrolled #nav > div.nav-hamburger > button {
