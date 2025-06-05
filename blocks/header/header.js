@@ -4,6 +4,36 @@ import { loadFragment } from '../fragment/fragment.js';
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
+/**
+ * Function to add radiobutton before the element #nav > div.section.nav-tools > div > p > sub
+ */
+function addRadioButton() {
+  const subElement = document.querySelector('#nav > div.section.nav-tools > div > p > sub');
+  if (subElement) {
+    const radioButton = document.createElement('input');
+    radioButton.type = 'checkbox';
+    radioButton.name = 'nav-tools';
+    radioButton.id = 'nav-tools-checkbox';
+    radioButton.classList.add('nav-tools-reducemotion');
+    subElement.prepend(radioButton);
+  }
+}
+
+/**
+ * function on scroll 50px from top, background transparency of header .nav-wrapper turns to 0.9
+ * @param {Event} e The scroll event
+ */
+function handleScroll(e) {
+  const navWrapper = document.querySelector('.nav-wrapper');
+  if (navWrapper) {
+    if (window.scrollY > 320) {
+      navWrapper.classList.add('nav-scrolled');
+    } else {
+      navWrapper.classList.remove('nav-scrolled');
+    }
+  }
+}
+
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
@@ -163,4 +193,6 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+  window.addEventListener('scroll', handleScroll);
+  addRadioButton();
 }

@@ -24,6 +24,7 @@
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
 
   /* body sizes */
+  --page-width: 1400px;
   --body-font-size-m: 22px;
   --body-font-size-s: 19px;
   --body-font-size-xs: 17px;
@@ -37,7 +38,7 @@
   --heading-font-size-xs: 22px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 60px;
 }
 
 /* fallback fonts */
@@ -78,6 +79,7 @@ body {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
+  position: relative;
 }
 
 body.appear {
@@ -86,6 +88,7 @@ body.appear {
 
 header {
   height: var(--nav-height);
+  position: absolute;
 }
 
 header .header,
@@ -233,7 +236,7 @@ main > .section {
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
   padding: 0 24px;
 }

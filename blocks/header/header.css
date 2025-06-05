@@ -1,9 +1,19 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  color: var(--light-color);
+  transition: all 0.5s;
   width: 100%;
+  height: var(--nav-height);
   z-index: 2;
   position: fixed;
+}
+
+.nav-wrapper.nav-scrolled {
+  background-color: white;
+  backdrop-filter: none;
+  color: var(--dark-color);
 }
 
 header nav {
@@ -30,12 +40,51 @@ header nav[aria-expanded='true'] {
   min-height: 100dvh;
 }
 
+/* css for creating a new style for the .nav-tools-reducemotion radio button */
+header nav .nav-tools-reducemotion {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  grid-area: reducemotion;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: rgb(154, 215, 252);
+  border: none;
+  cursor: pointer;
+  box-shadow: 16px 0px 3px 0px rgba(15, 41, 64, 0.8);
+  position: absolute;
+  right: 105px;
+}
+
+/* css for the .nav-tools-reducemotion radio button when checked */
+header nav .nav-tools-reducemotion:checked {
+  background-color: rgb(15, 41, 64);
+  rotate: 0deg;
+  right: 120px;
+  width: 17px;
+  height: 17px;
+  box-shadow: 17px 0px 4px -2px rgba(154, 215, 252, 0.8);
+  transition: all 0.3s ease, transform 0.3s ease;
+}
+/* css for the .nav-tools-reducemotion radio button when not checked */
+header nav .nav-tools-reducemotion:not(:checked) {
+  background-color: rgb(154, 215, 252);
+  rotate: 180deg;
+  transition: all 0.3s ease, transform 0.3s ease;
+}
+/* css for the .nav-tools-reducemotion radio button when focused */
+header nav .nav-tools-reducemotion:focus {
+
+}
+
 @media (width >= 900px) {
   header nav {
     display: flex;
     justify-content: space-between;
     gap: 0 32px;
-    max-width: 1264px;
+    max-width: 1400px;
     padding: 0 32px;
   }
 
@@ -46,12 +95,17 @@ header nav[aria-expanded='true'] {
 }
 
 header nav p {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
   margin: 0;
-  line-height: 1;
 }
 
 header nav a:any-link {
   color: currentcolor;
+  font-weight: 300;
+  font-family: 'Adobe Clean', adobe-clean, 'Trebuchet MS', sans-serif;
+  margin: 0px 0 3px 10px;
 }
 
 /* hamburger */
@@ -137,15 +191,17 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 
 /* brand */
 header .nav-brand {
+  display: flex;
+  align-items: center;
+  min-width: 300px;
   grid-area: brand;
   flex-basis: 128px;
   font-size: var(--heading-font-size-s);
-  font-weight: 700;
   line-height: 1;
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 27px;
   height: auto;
 }
 
@@ -166,11 +222,14 @@ header nav[aria-expanded='true'] .nav-sections {
 header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
-  font-size: var(--body-font-size-s);
 }
 
 header nav .nav-sections ul > li {
-  font-weight: 500;
+  font-size: var(--body-font-size-s);
+  color: currentcolor;
+  font-weight: 300;
+  font-family: 'Adobe Clean', adobe-clean, 'Trebuchet MS', sans-serif;
+  margin: 0px 0px 3px 10px; 
 }
 
 header nav .nav-sections ul > li > ul {
@@ -178,7 +237,23 @@ header nav .nav-sections ul > li > ul {
 }
 
 header nav .nav-sections ul > li > ul > li {
-  font-weight: 400;
+  font-weight: 700;
+  color: black;
+}
+
+header nav .nav-sections ul > li > ul > li > a {
+  font-weight: 700;
+  color: black;
+}
+
+/* tools */
+header nav .nav-tools {
+  grid-area: tools;
+  position: relative;
+  align-items: center;
+}
+
+header nav .nav-tools > sub {
 }
 
 @media (width >= 900px) {
@@ -240,7 +315,7 @@ header nav .nav-sections ul > li > ul > li {
     left: -24px;
     width: 200px;
     top: 150%;
-    padding: 16px;
+    padding: 10px; 
     background-color: var(--light-color);
     white-space: initial;
   }
@@ -262,7 +337,4 @@ header nav .nav-sections ul > li > ul > li {
   }
 }
 
-/* tools */
-header nav .nav-tools {
-  grid-area: tools;
-}
+
