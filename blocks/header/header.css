@@ -109,7 +109,8 @@ header nav .nav-hamburger button {
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
-  outline: 2px solid var(--background-color) 4px;
+  outline: 2px solid var(--background-color);
+  outline-offset: 4px;
 }
 
 .nav-wrapper.nav-scrolled #nav > div.nav-hamburger > button {
