@@ -23,7 +23,7 @@ function addRadioButton() {
  * function on scroll 50px from top, background transparency of header .nav-wrapper turns to 0.9
  * @param {Event} e The scroll event
  */
-function handleScroll(e) {
+function handleScroll() {
   const navWrapper = document.querySelector('.nav-wrapper');
   if (navWrapper) {
     if (window.scrollY > 320) {

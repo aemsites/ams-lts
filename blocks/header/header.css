@@ -1,6 +1,6 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgb(0 0 0 / 20%);
   backdrop-filter: blur(6px);
   color: var(--light-color);
   transition: all 0.5s;
@@ -43,55 +43,35 @@ header nav[aria-expanded='true'] {
 /* css for creating a new style for the .nav-tools-reducemotion radio button */
 header nav .nav-tools-reducemotion {
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   grid-area: reducemotion;
   display: inline-block;
   width: 15px;
   height: 15px;
   border-radius: 10px;
-  background-color: rgb(154, 215, 252);
+  background-color: rgb(154 215 252);
   border: none;
   cursor: pointer;
-  box-shadow: 16px 0px 3px 0px rgba(15, 41, 64, 0.8);
+  box-shadow: 16px 0 3px 0 rgb(15 41 64 / 80%);
   position: absolute;
   right: 105px;
 }
 
 /* css for the .nav-tools-reducemotion radio button when checked */
 header nav .nav-tools-reducemotion:checked {
-  background-color: rgb(15, 41, 64);
+  background-color: rgb(15 41 64 / 100%);
   rotate: 0deg;
   right: 120px;
   width: 17px;
   height: 17px;
-  box-shadow: 17px 0px 4px -2px rgba(154, 215, 252, 0.8);
+  box-shadow: 17px 0 4px -2px rgb(154 215 252 / 80%);
   transition: all 0.3s ease, transform 0.3s ease;
 }
+
 /* css for the .nav-tools-reducemotion radio button when not checked */
 header nav .nav-tools-reducemotion:not(:checked) {
-  background-color: rgb(154, 215, 252);
+  background-color: rgb(154 215 252 / 100%);
   rotate: 180deg;
   transition: all 0.3s ease, transform 0.3s ease;
-}
-/* css for the .nav-tools-reducemotion radio button when focused */
-header nav .nav-tools-reducemotion:focus {
-
-}
-
-@media (width >= 900px) {
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1400px;
-    padding: 0 32px;
-  }
-
-  header nav[aria-expanded='true'] {
-    min-height: 0;
-    overflow: visible;
-  }
 }
 
 header nav p {
@@ -105,7 +85,7 @@ header nav a:any-link {
   color: currentcolor;
   font-weight: 300;
   font-family: 'Adobe Clean', adobe-clean, 'Trebuchet MS', sans-serif;
-  margin: 0px 0 3px 10px;
+  margin: 0 0 3px 10px;
 }
 
 /* hamburger */
@@ -182,13 +162,6 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   transform: rotate(-45deg);
 }
 
-@media (width >= 900px) {
-  header nav .nav-hamburger {
-    display: none;
-    visibility: hidden;
-  }
-}
-
 /* brand */
 header .nav-brand {
   display: flex;
@@ -229,7 +202,7 @@ header nav .nav-sections ul > li {
   color: currentcolor;
   font-weight: 300;
   font-family: 'Adobe Clean', adobe-clean, 'Trebuchet MS', sans-serif;
-  margin: 0px 0px 3px 10px; 
+  margin: 0 0 3px 10px; 
 }
 
 header nav .nav-sections ul > li > ul {
@@ -253,10 +226,25 @@ header nav .nav-tools {
   align-items: center;
 }
 
-header nav .nav-tools > sub {
-}
-
 @media (width >= 900px) {
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 32px;
+    max-width: 1400px;
+    padding: 0 32px;
+  }
+
+  header nav[aria-expanded='true'] {
+    min-height: 0;
+    overflow: visible;
+  }
+  
+  header nav .nav-hamburger {
+    display: none;
+    visibility: hidden;
+  }
+
   header nav .nav-sections {
     display: block;
     visibility: visible;
