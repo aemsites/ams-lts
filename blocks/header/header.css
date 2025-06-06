@@ -316,6 +316,11 @@ header nav .nav-tools {
     font-family: var(--body-font-family)
   }
 
+  .nav-wrapper.nav-scrolled > #nav > div.section.nav-sections > div > ul > li {
+    color: var(--dark-color);
+    transition: all 0.5s;
+  }
+
 }
 
 
