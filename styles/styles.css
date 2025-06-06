@@ -9,6 +9,19 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
+@font-face {
+  font-family: "Trebuchet MS";
+  font-weight: 700;
+  size-adjust: 95%;
+  src: local("Trebuchet MS"), local("TrebuchetMS");
+}
+
+@font-face {
+  font-family: "Trebuchet MS";
+  font-weight: 400;
+  size-adjust: 87%;
+  src: local("Trebuchet MS"), local("TrebuchetMS");
+}
 
 :root {
   /* colors */
@@ -19,10 +32,13 @@
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
 
-  /* fonts */
-  --header-font-family: 'Adobe Clean', adobe-clean, 'Trebuchet MS', sans-serif;
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+/* Fonts */
+  --body-font-family: "Adobe Clean", adobe-clean, "Trebuchet MS", sans-serif;
+  --code-font-family:
+    "Source Code Pro",
+    source-code-pro,
+    "Courier New",
+    monospace;
 
   /* body sizes */
   --page-width: 1400px;
