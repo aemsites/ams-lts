@@ -20,12 +20,13 @@
   --link-hover-color: #1d3ecf;
 
   /* fonts */
+  --header-font-family: 'Adobe Clean', adobe-clean, 'Trebuchet MS', sans-serif;
   --body-font-family: roboto, roboto-fallback, sans-serif;
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
 
   /* body sizes */
   --page-width: 1400px;
-  --body-font-size-m: 22px;
+  --body-font-size-m: 18px;
   --body-font-size-s: 19px;
   --body-font-size-xs: 17px;
 
@@ -84,6 +85,7 @@ body {
 
 body.appear {
   display: block;
+  overflow-x: hidden;
 }
 
 header {
