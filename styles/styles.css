@@ -27,10 +27,19 @@
   /* colors */
   --background-color: white;
   --light-color: #f8f8f8;
-  --dark-color: #505050;
+  --dark-color: #444;
   --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --spectrum-blue-400: #a1d4fd;
+  --spectrum-blue-500: #82c1fb;
+  --spectrum-blue-900: #0469e3;
+  --spectrum-blue-1000: #0057be;
+  --spectrum-purple-500: #d1abfd;
+  --spectrum-purple-1000: #782bd8;
+  --spectrum-blue-1400: #002147;
+  --spectrum-red-1400: #4d0000;
+  --spectrum-magenta-900: #cd286f;
+  --link-color: var(--spectrum-blue-900);
+  --link-hover-color: var(--spectrum-blue-1000);
 
 /* Fonts */
   --body-font-family: "Adobe Clean", adobe-clean, "Trebuchet MS", sans-serif;
@@ -134,7 +143,10 @@ h6 {
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
+h1 { 
+  font-size: var(--heading-font-size-xxl); 
+  font-weight: 350;
+}
 h2 { font-size: var(--heading-font-size-xl); }
 h3 { font-size: var(--heading-font-size-l); }
 h4 { font-size: var(--heading-font-size-m); }
@@ -264,16 +276,71 @@ main > .section:first-of-type {
   margin-top: 0;
 }
 
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 32px;
+/* theme */
+.light {
+  background-color: white;
+  color: var(--text-color);
+
+  &.section {
+    padding: 40px 0;
+    margin: 0;
+    border-radius: 20px;
   }
 }
 
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
+.dark {
+  background: linear-gradient(0deg, var(--spectrum-purple-1000), var(--spectrum-magenta-900), var(--spectrum-blue-1000));
+  color: var(--light-color);
+
+  a {
+    color: var(--spectrum-blue-500);
+  }
+
+  a:hover {
+    color: var(--spectrum-purple-500);
+  }
+
+  .accordion details summary:hover, .accordion details summary:focus, .accordion details[open] summary {
+    background-color: var(--dark-color);
+  }
+
+  .accordion details[open] .accordion-item-body {
+    background-color: transparent;
+  }
+
+  .cards .cards-card-body {
+   color: var(--text-color);
+  }
+}
+
+@media (width >= 600px) {
+  main > .section > div {
+    padding: 0 7%;
+  }
+
+  .light {
+    &.section {
+      margin: 0 7%;
+    }
+  }
+}
+
+@media (width >= 900px) {
+  main > .section > div {
+padding: 36px 6%;
+  }
+}
+
+@media (width >= 1600px) {
+  main > .section > div {
+    margin: 0 auto;
+    max-width: 1500px;
+  }
+
+    .light {
+      &.section {
+        margin: 0 auto;
+        max-width: 1500px;
+      }
+    }
 }
