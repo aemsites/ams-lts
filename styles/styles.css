@@ -307,6 +307,10 @@ main > .section:first-of-type {
   .accordion details[open] .accordion-item-body {
     background-color: transparent;
   }
+
+  .cards .cards-card-body {
+   color: var(--text-color);
+  }
 }
 
 @media (width >= 600px) {
