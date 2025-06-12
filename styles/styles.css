@@ -23,6 +23,10 @@
   src: local("Trebuchet MS"), local("TrebuchetMS");
 }
 
+html{
+  width: fit-content;
+}
+
 :root {
   /* colors */
   --background-color: white;
@@ -57,9 +61,6 @@
 
   /* nav height */
   --nav-height: 60px;
-
-  /* Animations */
-  --animation-speed-multiplier: 'running';
 }
 
 /* fallback fonts */
@@ -101,6 +102,7 @@ body {
   font-size: var(--body-font-size-m);
   line-height: 1.6;
   position: relative;
+  width: 100%;
 }
 
 body.appear {
@@ -258,7 +260,6 @@ main > .section {
 }
 
 main > .section > div {
-  max-width: 1400px;
   margin: auto;
   padding: 0 24px;
 }

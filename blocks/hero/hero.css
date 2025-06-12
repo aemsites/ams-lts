@@ -362,6 +362,7 @@
   position: absolute;
   top: 54.4%;
   left: 20%;
+  margin-right: 80px;
   animation: fade-in-out-6 17s linear;
 }
 

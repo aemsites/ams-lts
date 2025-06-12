@@ -188,7 +188,6 @@ export default async function decorate(block) {
   // prevent mobile nav behavior on window resize
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
-
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
@@ -199,13 +198,11 @@ export default async function decorate(block) {
   function updateAnimationSpeed() {
     const checkbox = document.querySelector('header nav .nav-tools-reducemotion');
     const root = document.documentElement;
-    console.log(checkbox);
     if (checkbox && checkbox.checked) {
       root.style.setProperty('--animation-state', 'paused');
     } else {
       root.style.setProperty('--animation-state', 'running');
     }
-    console.log('Animation speed updated:', checkbox.checked ? 'paused' : 'running');
   }
   const checkbox = document.querySelector('header nav .nav-tools-reducemotion');
   if (checkbox) {
