@@ -195,4 +195,22 @@ export default async function decorate(block) {
   block.append(navWrapper);
   window.addEventListener('scroll', handleScroll);
   addRadioButton();
+  // Function to update animation speed based on checkbox state
+  function updateAnimationSpeed() {
+    const checkbox = document.querySelector('header nav .nav-tools-reducemotion');
+    const root = document.documentElement;
+    console.log(checkbox);
+    if (checkbox && checkbox.checked) {
+      root.style.setProperty('--animation-state', 'paused');
+    } else {
+      root.style.setProperty('--animation-state', 'running');
+    }
+    console.log('Animation speed updated:', checkbox.checked ? 'paused' : 'running');
+  }
+  const checkbox = document.querySelector('header nav .nav-tools-reducemotion');
+  if (checkbox) {
+    checkbox.addEventListener('change', updateAnimationSpeed);
+    // Initial call to set the animation speed based on the current state
+    updateAnimationSpeed();
+  }
 }
