@@ -52,25 +52,25 @@ header nav .nav-tools-reducemotion {
   background-color: rgb(154 215 252);
   border: none;
   cursor: pointer;
-  box-shadow: 16px 0 3px 0 rgb(15 41 64 / 80%);
+  box-shadow: 16px 0 8px 0 rgb(154 215 252 / 80%);
   position: absolute;
   right: 93px;
 }
 
 /* css for the .nav-tools-reducemotion radio button when checked */
-header nav .nav-tools-reducemotion:checked {
-  background-color: rgb(15 41 64 / 100%);
+header nav .nav-tools-reducemotion:not(:checked) {
+  background-color: rgb(154 215 252 / 80%);
   rotate: 0deg;
   right: 108px;
   width: 16px;
   height: 16px;
-  box-shadow: 17px 0 4px -2px rgb(154 215 252 / 80%);
+  box-shadow: 17px 0 8px -2px rgb(0 83 148 / 100%);
   transition: all 0.3s ease, transform 0.3s ease;
 }
 
 /* css for the .nav-tools-reducemotion radio button when not checked */
-header nav .nav-tools-reducemotion:not(:checked) {
-  background-color: rgb(154 215 252 / 100%);
+header nav .nav-tools-reducemotion:checked {
+  background-color: rgb(0 83 148 / 100%);
   rotate: 180deg;
   transition: all 0.3s ease, transform 0.3s ease;
 }
@@ -132,7 +132,6 @@ header nav[aria-expanded='true'] .nav-hamburger button {
 header .nav-brand {
   display: flex;
   align-items: center;
-  min-width: 230px;
   grid-area: brand;
   flex-basis: 128px;
   line-height: 1;
@@ -214,6 +213,10 @@ header nav .nav-tools {
   header nav[aria-expanded='true'] {
     min-height: 0;
     overflow: visible;
+  }
+
+  header .nav-brand{
+    min-width: 230px;
   }
 
   header nav .nav-hamburger {
