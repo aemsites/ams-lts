@@ -25,11 +25,16 @@ function addRadioButton() {
   const subElement = document.querySelector('#nav > div.section.nav-tools > div > p > sub');
   if (subElement) {
     const radioButton = document.createElement('input');
+    const radioButtonLabel = document.createElement('label');
     radioButton.type = 'checkbox';
     radioButton.name = 'nav-tools';
     radioButton.id = 'nav-tools-checkbox';
     radioButton.classList.add('nav-tools-reducemotion');
+    radioButtonLabel.setAttribute('for', 'nav-tools-checkbox');
+    radioButtonLabel.textContent = 'REDUCE';
+    radioButtonLabel.id = 'reducemotion-label';
     subElement.prepend(radioButton);
+    subElement.prepend(radioButtonLabel);
   }
 }
 
