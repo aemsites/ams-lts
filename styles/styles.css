@@ -61,6 +61,10 @@ html{
 
   /* nav height */
   --nav-height: 60px;
+
+  /* hero animation ini */
+  --animation-speed-multiplyer: 1;
+  --animation-hero-text-duration: 2s;
 }
 
 /* fallback fonts */

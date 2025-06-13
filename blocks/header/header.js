@@ -5,6 +5,20 @@ import { loadFragment } from '../fragment/fragment.js';
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
 /**
+* Function to pause/resume hero animation based on Reduce motion checkbox state
+*/
+function updateAnimationSpeed() {
+    const checkbox = document.querySelector('header nav .nav-tools-reducemotion');
+    const root = document.documentElement;
+    if (checkbox && checkbox.checked) {
+      root.style.setProperty('--animation-state', 'paused');
+      root.style.setProperty('--animation-speed-multiplyer','0');
+    } else {
+      root.style.setProperty('--animation-state', 'running');
+    }
+  }
+
+/**
  * Function to add radiobutton before the element #nav > div.section.nav-tools > div > p > sub
  */
 function addRadioButton() {
@@ -194,20 +208,10 @@ export default async function decorate(block) {
   block.append(navWrapper);
   window.addEventListener('scroll', handleScroll);
   addRadioButton();
-  // Function to update animation speed based on checkbox state
-  function updateAnimationSpeed() {
-    const checkbox = document.querySelector('header nav .nav-tools-reducemotion');
-    const root = document.documentElement;
-    if (checkbox && checkbox.checked) {
-      root.style.setProperty('--animation-state', 'paused');
-    } else {
-      root.style.setProperty('--animation-state', 'running');
-    }
-  }
+  //run pause hero animation function 
   const checkbox = document.querySelector('header nav .nav-tools-reducemotion');
   if (checkbox) {
     checkbox.addEventListener('change', updateAnimationSpeed);
-    // Initial call to set the animation speed based on the current state
     updateAnimationSpeed();
   }
 }
