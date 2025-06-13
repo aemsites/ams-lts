@@ -75,6 +75,11 @@ header nav .nav-tools-reducemotion:checked {
   transition: all 0.3s ease, transform 0.3s ease;
 }
 
+#reducemotion-label {
+  color: transparent;
+  cursor: pointer;
+}
+
 header nav p {
   display: flex;
   align-items: flex-end;
