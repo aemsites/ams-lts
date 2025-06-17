@@ -335,14 +335,14 @@ main > .section:first-of-type {
 
 @media (width >= 900px) {
   main > .section > div {
-padding: 36px 6%;
+padding: 36px 5%;
   }
 }
 
 @media (width >= 1600px) {
   main > .section > div {
     margin: 0 auto;
-    max-width: 1500px;
+    max-width: 100%;
   }
 
     .light {

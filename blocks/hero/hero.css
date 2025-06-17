@@ -368,7 +368,7 @@
 
 }
 
-#a-guide {
+#a-guide-to-exciting-features-an-upgrade-from-aem-65-will-bring {
   color: rgb(255 255 255);
   font-size: 30px;
   font-weight: 200;
@@ -388,15 +388,11 @@
   0% { left: 20%; opacity: 0; 
   }
 
-  50% { left: 20%; opacity: 1; 
+  10% { left: 20%; opacity: 1; 
   }
 
   100% { left: 20%; opacity: 1; 
   }
-}
-
-#a-guide::after {
-  content: ' to exciting features an upgrade from AEM 6.5 will bring';
 }
 
 
