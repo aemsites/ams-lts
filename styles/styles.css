@@ -23,10 +23,6 @@
   src: local("Trebuchet MS"), local("TrebuchetMS");
 }
 
-html{
-  width: fit-content;
-}
-
 :root {
   /* colors */
   --background-color: white;
@@ -342,7 +338,12 @@ padding: 36px 5%;
 @media (width >= 1600px) {
   main > .section > div {
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 1500px;
+  }
+
+  main > .section.hero-container > div {
+    margin: 0 auto;
+    max-width: unset;
   }
 
     .light {
