@@ -193,6 +193,7 @@
 #the-future-is {
   color: white;
   font-weight: 200;
+  white-space: nowrap;
   z-index: 1;
   position: absolute;
   top: 31.4%;
@@ -201,11 +202,12 @@
 
 #improved-performance {
   color: rgb(4 144 255 / 59%);
-  font-size: 70px;
+  font-size: 40px;
+  white-space: nowrap;
   line-height: 75px;
   z-index: 1;
   position: absolute;
-  top: 36%;
+  top: 40%;
   left: -10%;
   opacity: 0;
   animation: fade-in-out-1 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
@@ -235,11 +237,12 @@
 
 #enhanced-security {
   color: rgb(4 144 255 / 59%);
-  font-size: 70px;
+  font-size: 45px;
+  white-space: nowrap;
   line-height: 75px;
   z-index: 1;
   position: absolute;
-  top: 36%;
+  top: 40%;
   left: -10%;
   opacity: 0;
   animation: fade-in-out-2 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
@@ -269,11 +272,12 @@
 
 #future-proofing {
   color: rgb(4 144 255 / 59%);
-  font-size: 70px;
+  font-size: 45px;
+  white-space: nowrap;
   line-height: 75px;
   z-index: 1;
   position: absolute;
-  top: 36%;
+  top: 40%;
   left: -10%;
   opacity: 0;
   animation: fade-in-out-3 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
@@ -303,11 +307,12 @@
 
 #long-term-support {
   color: rgb(4 144 255 / 59%);
-  font-size: 70px;
+  font-size: 45px;
+  white-space: nowrap;
   line-height: 75px;
   z-index: 1;
   position: absolute;
-  top: 36%;
+  top: 40%;
   left: -10%;
   opacity: 0;
   animation: fade-in-out-4 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
@@ -340,6 +345,7 @@
   color: rgb(4 144 255 / 59%);
   font-size: 70px;
   line-height: 75px;
+  white-space: nowrap;
   z-index: 1;
   position: absolute;
   top: 36%;
@@ -368,7 +374,7 @@
 
 }
 
-#a-guide {
+.hero.block > div > div > h3 {
   color: rgb(255 255 255);
   font-size: 30px;
   font-weight: 200;
@@ -377,7 +383,7 @@
   top: 54.4%;
   left: 20%;
   margin-right: 80px;
-  opacity: 0;
+  opacity: 1;
   animation: fade-in-out-6 2s linear;
   animation-delay: calc(5 * var(--animation-hero-text-duration) * var(--animation-speed-multiplyer));
   animation-fill-mode: forwards;
@@ -385,18 +391,14 @@
 }
 
 @keyframes fade-in-out-6 {
-  0% { left: 20%; opacity: 0; 
+  0% { left: 20%; opacity: 1; 
   }
 
-  50% { left: 20%; opacity: 1; 
+  10% { left: 20%; opacity: 1; 
   }
 
   100% { left: 20%; opacity: 1; 
   }
-}
-
-#a-guide::after {
-  content: ' to exciting features an upgrade from AEM 6.5 will bring';
 }
 
 
@@ -404,5 +406,25 @@
 @media (width >= 900px) {
   .hero {
     padding: 40px 32px;
+  }
+
+  #long-term-support {
+    font-size: 70px;
+    top: 36%;
+  }
+
+  #future-proofing {
+    font-size: 70px;
+    top: 36%;
+  }
+
+  #enhanced-security {
+    font-size: 70px;
+    top: 36%;
+  }
+
+  #improved-performance {
+    font-size: 70px;
+    top: 36%;
   }
 }
