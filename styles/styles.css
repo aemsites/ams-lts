@@ -331,7 +331,7 @@ main > .section:first-of-type {
 
 @media (width >= 900px) {
   main > .section > div {
-padding: 36px 5%;
+padding: 36px 6%;
   }
 }
 
