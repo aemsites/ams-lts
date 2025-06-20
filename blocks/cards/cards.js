@@ -20,7 +20,7 @@ export default function decorate(block) {
     const thirdColumn = li.children[2]; // Get the third child (0-based index)
     if (thirdColumn && thirdColumn.querySelector('a')) {
       const link = thirdColumn.querySelector('a'); // Get the link
-      const href = link.href; // Extract the href attribute
+      const { href } = link; // Extract the href attribute using destructuring
 
       // Remove the text content of the link
       link.textContent = ''; // Clears any text inside the <a> tag
