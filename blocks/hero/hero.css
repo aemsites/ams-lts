@@ -32,11 +32,9 @@
 
 .hero.block {
   position: relative;
+  background: var(--checkerboard-background);
+  background-size: var(--checkerboard-background-size);
   overflow: visible;
-  background: #9eecff;
-  background: linear-gradient(0deg,rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0) 100%);
-  overflow: hidden;
-
 }
 
 .mayan {
@@ -202,7 +200,7 @@
 }
 
 #the-future-is {
-  color: var(--light-color);
+  color: var(--dark-color);
   font-weight: 200;
   white-space: nowrap;
   z-index: 1;
@@ -386,7 +384,7 @@
 }
 
 .hero.block > div > div > h3 {
-  color: var(--light-color);
+  color: var(--dark-color);
   font-size: 30px;
   font-weight: 200;
   z-index: 1;

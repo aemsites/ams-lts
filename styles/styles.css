@@ -297,7 +297,7 @@ main > .section {
 }
 
 main > .section:nth-child(2) {
-  color: var(--light-color);
+  color: var(--dark-color);
 }
 
 main > .section > div {
@@ -322,9 +322,9 @@ main > .section:first-of-type {
 }
 
 .dark {
-  background-image: url('/icons/spectrum-bg.svg');
+  background-image: url('/icons/full-bg.png');
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   color: var(--light-color);
 
   a {
