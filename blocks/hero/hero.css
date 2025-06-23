@@ -210,7 +210,7 @@
 }
 
 #improved-performance {
-  color: rgba(43, 160, 255, 1);
+  color: rgb(43 160 255 / 100%);
   font-size: 40px;
   white-space: nowrap;
   line-height: 75px;
@@ -245,7 +245,7 @@
 }
 
 #enhanced-security {
-  color: rgba(43, 160, 255, 1);
+  color: rgb(43 160 255 / 100%);
   font-size: 45px;
   white-space: nowrap;
   line-height: 75px;
@@ -280,7 +280,7 @@
 }
 
 #future-proofing {
-  color: rgba(43, 160, 255, 1);
+  color: rgb(43 160 255 / 100%);
   font-size: 45px;
   white-space: nowrap;
   line-height: 75px;
@@ -315,7 +315,7 @@
 }
 
 #long-term-support {
-  color: rgba(43, 160, 255, 1);
+  color: rgb(43 160 255 / 100%);
   font-size: 45px;
   white-space: nowrap;
   line-height: 75px;
@@ -351,7 +351,7 @@
 }
 
 #aem-lts {
-  color: rgba(43, 160, 255, 1);
+  color: rgb(43 160 255 / 100%);
   font-size: 70px;
   line-height: 75px;
   white-space: nowrap;
