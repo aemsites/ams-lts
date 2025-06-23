@@ -73,7 +73,7 @@
 
  /* Checkerboard pattern */
   --color-checkerboard-bg-border: rgb(214 213 213 / 40%);
-  --color-checkerboard-bg-fill: rgba(176, 215, 255, 0.374);
+  --color-checkerboard-bg-fill: rgb(176 215 255 / 37.4%);
   --checkerboard-background:
     linear-gradient(
       var(--color-checkerboard-bg-border) 1px,
