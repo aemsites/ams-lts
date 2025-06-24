@@ -53,12 +53,12 @@
 
 .carousel .carousel-slide .carousel-slide-content {
   z-index: 1;
-  margin: 68px;
+  margin: 68px 0;
   padding: 16px;
   color: white;
   background-color: rgb(19 19 19 / 75%);
   position: relative;
-  width: var(--slide-content-width, auto);
+  width: -webkit-fill-available;
 }
 
 .carousel .carousel-slide-indicators {
@@ -67,7 +67,6 @@
   justify-content: center;
   gap: 6px 12px;
   padding: 12px;
-  background-color: var(--light-color);
   line-height: 0;
 }
 
@@ -85,14 +84,16 @@
 .carousel .carousel-slide-indicator button:hover,
 .carousel .carousel-slide-indicator button:focus-visible {
   background-color: var(--text-color);
+  border: white 2px solid;
 }
 
 .carousel .carousel-navigation-buttons {
   position: absolute;
-  top: 50%;
+  top: calc(100% + 24px);
   transform: translateY(-50%);
-  left: 12px;
-  right: 12px;
+  width: 100%;
+  height: 48px;
+  background-color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -102,9 +103,10 @@
 /* stylelint-disable-next-line no-descending-specificity */
 .carousel .carousel-navigation-buttons button {
   position: relative;
-  width: 44px;
-  height: 44px;
-  margin: 0;
+  width: 24px;
+  height: 24px;
+  margin: 12px;
+  border: white 2px solid;
   border-radius: 50%;
   padding: 0;
   background-color: rgb(19 19 19 / 25%);
@@ -113,7 +115,7 @@
 
 .carousel .carousel-navigation-buttons button:hover,
 .carousel .carousel-navigation-buttons button:focus-visible {
-  background-color: rgb(19 19 19 / 75%);
+  background-color: rgb(137 137 137 / 75%);
 }
 
 .carousel .carousel-navigation-buttons button::after {
@@ -122,8 +124,8 @@
   border: 2px solid;
   border-bottom: 0;
   border-left: 0;
-  height: 12px;
-  width: 12px;
+  height: 8px;
+  width: 8px;
   position: absolute;
   top: 50%;
   left: calc(50% + 2px);
@@ -135,19 +137,24 @@
   left: calc(50% - 2px);
 }
 
+.carousel.block > nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: calc(100% - 96px);
+  justify-self: center;
+  justify-content: center;
+}
+
 @media (width >= 600px) {
-  .carousel .carousel-navigation-buttons {
-    left: 24px;
-    right: 24px;
+  .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
+    --slide-content-width: auto;
   }
 
   .carousel .carousel-slide .carousel-slide-content {
-    --slide-content-width: calc((100% - 184px) / 2);
-
     margin: 92px;
-  }
-
-  .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
-    --slide-content-width: auto;
+    margin-left: 0;
+    padding: 1% 10% 3%;
+    width: var(--slide-content-width, auto);
   }
 }
