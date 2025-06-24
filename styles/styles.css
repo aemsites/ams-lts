@@ -28,7 +28,7 @@
   --background-color: white;
   --light-color: #f8f8f8;
   --dark-color: #444;
-  --text-color: #131313;
+  --text-color: #444;
   --spectrum-blue-400: #a1d4fd;
   --spectrum-blue-500: #82c1fb;
   --spectrum-blue-900: #0469e3;
@@ -70,6 +70,26 @@
   /* hero animation ini */
   --animation-speed-multiplyer: 1;
   --animation-hero-text-duration: 2s;
+
+ /* Checkerboard pattern */
+  --color-checkerboard-bg-border: rgb(214 213 213 / 40%);
+  --color-checkerboard-bg-fill: rgb(176 215 255 / 37.4%);
+  --checkerboard-background:
+    linear-gradient(
+      var(--color-checkerboard-bg-border) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      var(--color-checkerboard-bg-border) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      45deg,
+      var(--color-checkerboard-bg-fill) 50%,
+      var(--color-checkerboard-bg-fill) 51%
+    );
+  --checkerboard-background-size: clamp(15px, 3vw, 25px) clamp(15px, 3vw, 25px);
 }
 
 /* fallback fonts */
@@ -181,6 +201,10 @@ pre {
   white-space: pre;
 }
 
+main {
+ overflow: hidden;
+}
+
 main > div {
   margin: 40px 16px;
 }
@@ -269,6 +293,11 @@ main img {
 /* sections */
 main > .section {
   margin: 40px 0;
+  color: var(--text-color);
+}
+
+main > .section:nth-child(2) {
+  color: var(--dark-color);
 }
 
 main > .section > div {
@@ -293,7 +322,9 @@ main > .section:first-of-type {
 }
 
 .dark {
-  background: linear-gradient(0deg, var(--spectrum-purple-1000), var(--spectrum-magenta-900), var(--spectrum-blue-1000));
+  background-image: url('/icons/full-bg.png');
+  background-size: contain;
+  background-repeat: repeat-y;
   color: var(--light-color);
 
   a {
