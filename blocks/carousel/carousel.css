@@ -53,13 +53,12 @@
 
 .carousel .carousel-slide .carousel-slide-content {
   z-index: 1;
-  margin: 68px;
-  margin-left: 0;
+  margin: 68px 0;
   padding: 16px;
   color: white;
   background-color: rgb(19 19 19 / 75%);
   position: relative;
-  width: var(--slide-content-width, auto);
+  width: -webkit-fill-available;
 }
 
 .carousel .carousel-slide-indicators {
@@ -148,13 +147,14 @@
 }
 
 @media (width >= 600px) {
+  .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
+    --slide-content-width: auto;
+  }
+
   .carousel .carousel-slide .carousel-slide-content {
     margin: 92px;
     margin-left: 0;
     padding: 1% 10% 3%;
-  }
-
-  .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
-    --slide-content-width: auto;
+    width: var(--slide-content-width, auto);
   }
 }
