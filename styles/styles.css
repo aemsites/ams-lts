@@ -293,7 +293,7 @@ main img {
 /* sections */
 main > .section {
   margin: 40px 0;
-  color: var(--text-color);
+  color: var(--light-color);
 }
 
 main > .section:nth-child(2) {
@@ -322,7 +322,7 @@ main > .section:first-of-type {
 }
 
 .dark {
-  background-image: url('/icons/spectrum-bg.svg');
+  background-image: url('/icons/spectrum-bg.svg'), linear-gradient(0deg, #7154fa, #eb1000);;
   background-size: contain;
   background-repeat: no-repeat;
   color: var(--light-color);
