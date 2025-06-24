@@ -86,6 +86,10 @@
   }
 }
 
+.cards-link-wrapper {
+  display: block; /* Ensure the link covers the entire <li> */
+}
+
 @media (width <= 1280px) {
   .cards > ul {
     flex-wrap: wrap;

@@ -16,21 +16,28 @@ export default function decorate(block) {
       }
     });
 
-    // Check if the third column exists and contains a link
-    const thirdColumn = li.children[2]; // Get the third child (0-based index)
-    if (thirdColumn && thirdColumn.querySelector('a')) {
-      const link = thirdColumn.querySelector('a'); // Get the link
-      const { href } = link; // Extract the href attribute using destructuring
+    // Check if the second column contains a link in the last <p> tag
+    const secondColumn = li.children[1]; // Get the second child (0-based index)
+    if (secondColumn) {
+      const lastP = secondColumn.querySelector('p:last-of-type'); // Find the last <p> tag in the second column
+      if (lastP) {
+        const link = lastP.querySelector('a'); // Find the first <a> tag within the last <p> tag
+        if (link) {
+          const { href } = link; // Extract the href attribute using destructuring
 
-      // Remove the text content of the link
-      link.textContent = ''; // Clears any text inside the <a> tag
+          // Remove the text content of the link
+          link.textContent = ''; // Clears any text inside the <a> tag
 
-      // Wrap the entire <li> content in the link
-      const wrapperLink = document.createElement('a');
-      wrapperLink.href = href;
-      wrapperLink.style.display = 'block'; // Ensure the link covers the entire <li>
-      while (li.firstChild) wrapperLink.append(li.firstChild); // Move all children into the link
-      li.append(wrapperLink); // Append the link back to the <li>
+          // Wrap the entire <li> content in the link
+          const wrapperLink = document.createElement('a');
+          wrapperLink.href = href;
+          wrapperLink.classList.add('cards-link-wrapper'); // Add a class instead of inline CSS
+          while (li.firstChild) {
+            wrapperLink.append(li.firstChild); // Move all children into the link
+          }
+          li.append(wrapperLink); // Append the link back to the <li>
+        }
+      }
     }
 
     ul.append(li);
