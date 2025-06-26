@@ -32,24 +32,25 @@
 
 .hero.block {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .mayan {
   color: transparent;
   position: absolute;
+  z-index: -1;
   top: -500px;
   left: 0;
   width: 2500px;
   height: 2500px;
-  background-image: url('/icons/mayan.svg');
+  background-image: url('/experiments/icons/mayan.svg');
   background-size: cover;
   transform-origin: center center;
   animation:
     spin-mayan 200s linear infinite;
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.2; /* Slightly transparent for effect */
+  opacity: 0.1; /* Slightly transparent for effect */
 }
 
 @keyframes spin-mayan{ 
@@ -61,17 +62,18 @@
 .signs {
   color: transparent;
   position: absolute;
+  z-index: -1;
   top: -200px;
   left: 0;
   width: 2000px;
   height: 2000px;
-  background-image: url('/icons/signs.svg');
+  background-image: url('/experiments/icons/signs.svg');
   background-size: cover;
   transform-origin: center center;
   animation: spin-signs 90s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.3;
+  opacity: 0.1;
 }
 
 @keyframes spin-signs{
@@ -83,17 +85,18 @@
 .years {
   color: transparent;
   position: absolute;
+  z-index: -1;
   top: -100px;
   left: 0;
   width: 1500px;
   height: 1500px;
-  background-image: url('/icons/years.svg');
+  background-image: url('/experiments/icons/years.svg');
   background-size: cover;
   transform-origin: center center;
   animation: spin-years 40s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.3;
+  opacity: 0.1;
 }
 
 @keyframes spin-years{
@@ -105,17 +108,18 @@
 .days {
   color: transparent;
   position: absolute;
+  z-index: -1;
   top: -50px;
   left: 0;
   width: 1200px;
   height: 1200px;
-  background-image: url('/icons/days.svg');
+  background-image: url('/experiments/icons/days.svg');
   background-size: cover;
   transform-origin: center center;
   animation: spin-days 25s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.4;
+  opacity: 0.2;
 }
 
 @keyframes spin-days{
@@ -127,17 +131,18 @@
 .hrs {
   color: transparent;
   position: absolute;
+  z-index: -1;
   top: -10px;
   left: 0;
   width: 1000px;
   height: 1000px;
-  background-image: url('/icons/oldclock.svg');
+  background-image: url('/experiments/icons/oldclock.svg');
   background-size: cover;
   transform-origin: center center;
   animation: spin-hrs 18s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.4;
+  opacity: 0.2;
 }
 
 @keyframes spin-hrs{
@@ -149,17 +154,18 @@
 .min {
   color: transparent;
   position: absolute;
+  z-index: -1;
   top: 100px;
   left: 0;
   width: 800px;
   height: 800px;
-  background-image: url('/icons/minutes.svg');
+  background-image: url('/experiments/icons/minutes.svg');
   background-size: cover;
   transform-origin: center center;
   animation: spin-min 12s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.4;
+  opacity: 0.2;
 }
 
 @keyframes spin-min {
@@ -171,17 +177,18 @@
 .ms {
   color: transparent;
   position: absolute;
+  z-index: -1;
   top: 200px;
   left: 0;
   width: 700px;
   height: 700px;
-  background-image: url('/icons/milisec.svg');
+  background-image: url('/experiments/icons/milisec.svg');
   background-size: cover;
   transform-origin: center center;
   animation: spin-ms 5s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.4;
+  opacity: 0.2;
 }
 
 @keyframes spin-ms {
@@ -191,7 +198,7 @@
 }
 
 #the-future-is {
-  color: white;
+  color: var(--light-color);
   font-weight: 200;
   white-space: nowrap;
   z-index: 1;
@@ -201,7 +208,7 @@
 }
 
 #improved-performance {
-  color: rgb(4 144 255 / 59%);
+  color: rgb(43 160 255 / 100%);
   font-size: 40px;
   white-space: nowrap;
   line-height: 75px;
@@ -236,7 +243,7 @@
 }
 
 #enhanced-security {
-  color: rgb(4 144 255 / 59%);
+  color: rgb(43 160 255 / 100%);
   font-size: 45px;
   white-space: nowrap;
   line-height: 75px;
@@ -271,7 +278,7 @@
 }
 
 #future-proofing {
-  color: rgb(4 144 255 / 59%);
+  color: rgb(43 160 255 / 100%);
   font-size: 45px;
   white-space: nowrap;
   line-height: 75px;
@@ -306,7 +313,7 @@
 }
 
 #long-term-support {
-  color: rgb(4 144 255 / 59%);
+  color: rgb(43 160 255 / 100%);
   font-size: 45px;
   white-space: nowrap;
   line-height: 75px;
@@ -342,7 +349,7 @@
 }
 
 #aem-lts {
-  color: rgb(4 144 255 / 59%);
+  color: rgb(43 160 255 / 100%);
   font-size: 70px;
   line-height: 75px;
   white-space: nowrap;
@@ -375,7 +382,7 @@
 }
 
 .hero.block > div > div > h3 {
-  color: rgb(255 255 255);
+  color: var(--light-color);
   font-size: 30px;
   font-weight: 200;
   z-index: 1;
