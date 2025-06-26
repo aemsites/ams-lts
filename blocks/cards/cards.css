@@ -1,15 +1,26 @@
+.cards {
+    display: flex;
+    justify-content: center;
+  }
+  
+  
 .cards > ul {
   list-style: none;
+  gap: 96px 64px;
   margin: 0;
   padding: 0;
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
+  height:355px;
+  width: 448px;
   background-color: var(--background-color);
+  border-radius: 16px;
+  position: relative;
 }
 
 .cards .cards-card-body {
@@ -17,11 +28,116 @@
 }
 
 .cards .cards-card-image {
-  line-height: 0;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
 }
 
 .cards > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cards > ul > li:hover img {
+  transform: scale(1.05); 
+}
+
+.cards > ul > li > a {
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cards .cards-card-body > p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 18px 0 0;
+}
+
+.cards .cards-card-body > h3 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+
+.text-cards-links h2 {
+  text-align: center;
+}
+
+
+@media (width <= 1600px) {
+  .cards > ul {
+    max-width: 1500px; /* Limits the maximum width of the cards container */
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  .cards > ul > li {
+    width: 448px;
+    height: 355px;
+  }
+
+  .cards-card-body {
+    height: 169px;
+  }
+}
+
+.cards-link-wrapper {
+  display: block; /* Ensure the link covers the entire <li> */
+}
+
+@media (width <= 1280px) {
+  .cards > ul {
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+
+  }
+
+  .cards > ul > li {
+    width: 355px;
+    height: 375px;
+  }
+
+  .cards-card-body {
+    height: 230px;
+  }
+}
+
+@media (width <= 900px) {
+  .cards > ul {
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+
+  }
+
+  .cards > ul > li {
+    width: 408px;
+    height: 375px;
+  }
+
+  .cards-card-body {
+    height: 210px;
+  }
+}
+
+@media (width <= 600px) {
+  .cards > ul {
+    margin: 0;
+  }
+
+  .cards > ul > li {
+    width: 272px;
+    height: 400px;
+  }
+  
+  .cards-card-body {
+    height: 255px;
+  }
 }
