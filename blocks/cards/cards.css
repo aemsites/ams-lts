@@ -141,3 +141,40 @@
     height: 255px;
   }
 }
+
+.cards.cardousel.block {
+  display: flex;
+  overflow-x: auto;
+  justify-content: unset;
+  scrollbar-width: none;
+  counter-reset: card-counter;
+  cursor: grab; /* Show grab cursor for drag affordance */
+  user-select: none; /* Prevent text selection during drag */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+}
+
+.cards.cardousel.block > ul {
+    flex-wrap: nowrap;
+    justify-content: unset;
+    gap: 96px 40px;
+}
+
+.cards.cardousel.block > ul > li {
+    overflow: hidden;
+    justify-content: unset;
+    min-width: 448px;
+}
+
+.cards.cardousel.block > ul > li::before {
+    counter-increment: card-counter;
+    justify-content: unset;
+    content: counter(card-counter);
+    position: absolute;
+    top: 47%;
+    right: 49%;
+    transform: translate(88%, -53%);
+    font-family: Impact, sans-serif;
+    font-size: 500px;
+    color: rgb(0 0 0 / 5%);
+    z-index: 1;
+}

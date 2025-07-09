@@ -43,6 +43,68 @@ export default function decorate(block) {
     ul.append(li);
   });
 
+  const container = document.querySelector('.cards.cardousel.block');
+  let isDragging = false;
+  let startX;
+  let scrollLeft;
+
+  // Mouse events for dragging
+  container.addEventListener('mousedown', (e) => {
+    // Only start dragging if the left mouse button is pressed
+    if (e.button !== 0) return;
+    isDragging = true;
+    container.classList.add('grabbing');
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+  });
+
+  container.addEventListener('mouseleave', () => {
+    isDragging = false;
+    container.classList.remove('grabbing');
+  });
+
+  container.addEventListener('mouseup', () => {
+    isDragging = false;
+    container.classList.remove('grabbing');
+  });
+
+  container.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault(); // Prevent text selection during drag
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 2; // Adjust drag speed
+    container.scrollLeft = scrollLeft - walk;
+  });
+
+  // Touch events for swiping
+  container.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startX = e.touches[0].pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+  });
+
+  container.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+
+  container.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX - container.offsetLeft;
+    const walk = (x - startX) * 2; // Adjust drag speed
+    container.scrollLeft = scrollLeft - walk;
+  });
+
+  // Ensure mouse wheel scrolling works naturally
+  container.addEventListener('wheel', (e) => {
+    // Allow default horizontal scrolling if the wheel event is primarily horizontal
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+      return; // Let the browser handle horizontal wheel scrolling
+    }
+    // For vertical wheel scrolling, translate to horizontal
+    e.preventDefault(); // Prevent vertical page scrolling
+    container.scrollLeft += e.deltaY * 2; // Adjust scroll speed
+  });
+
   ul.querySelectorAll('picture > img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   block.textContent = '';
   block.append(ul);
