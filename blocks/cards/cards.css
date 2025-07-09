@@ -176,5 +176,10 @@
     font-family: Impact, sans-serif;
     font-size: 500px;
     color: rgb(0 0 0 / 5%);
-    z-index: 1;
+    z-index: 0;
+}
+
+.cards.cardousel.block > ul > li > div {
+  position: relative;
+  z-index: 1;
 }
