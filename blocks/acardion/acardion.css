@@ -83,6 +83,20 @@
     align-self: center; /* Center the arrow below the preview text */
   }
   
+  /* Styling for preview text */
+  .acardion-preview-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: gray; /* Use a lighter color to differentiate from the header */
+    margin-top: 8px; /* Add spacing below the header */
+    white-space: nowrap; /* Ensure preview text stays on a single line */
+    overflow: hidden; /* Prevent overflow if text is too long */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    display: block; /* Ensure it appears below the header */
+    text-align: left; /* Keep preview text aligned to the left */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for disappearing */
+  }
+
   /* Rotate arrow when accordion is expanded */
   .acardion-item[open] .acardion-item-label::after {
     transform: rotate(-135deg); /* Rotates the arrow when expanded */
@@ -92,8 +106,8 @@
   .acardion-item[open] .acardion-preview-text {
     opacity: 0; /* Fade out the preview text */
     transform: translateY(-10px); /* Move the preview text slightly upwards */
-    margin-top: 0px;
-    height: 0px;
+    margin-top: 0;
+    height: 0;
   }
   
   /* Reduce padding when preview text is hidden */
@@ -113,31 +127,11 @@
     max-height: 0; /* Initially hidden */
     transition: max-height 0.3s ease, padding 0.3s ease; /* Smooth transition */
   }
-  
+
   /* When the accordion is expanded */
   .acardion-item[open] .acardion-item-body {
     max-height: 500px; /* Adjust based on expected content height */
     padding: 16px; /* Restores padding when expanded */
-  }
-
-/* Styling for preview text */
-.acardion-preview-text {
-    font-size: 14px;
-    font-weight: 400;
-    color: gray; /* Use a lighter color to differentiate from the header */
-    margin-top: 8px; /* Add spacing below the header */
-    white-space: nowrap; /* Ensure preview text stays on a single line */
-    overflow: hidden; /* Prevent overflow if text is too long */
-    text-overflow: ellipsis; /* Add ellipsis if text overflows */
-    display: block; /* Ensure it appears below the header */
-    text-align: left; /* Keep preview text aligned to the left */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for disappearing */
-  }
-  
-  /* Hide preview text when accordion is expanded */
-  .acardion-item[open] .acardion-preview-text {
-    opacity: 0; /* Fade out the preview text */
-    transform: translateY(-10px); /* Move the preview text slightly upwards */
   }
 
   /* Responsive styles */
