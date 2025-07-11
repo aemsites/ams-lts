@@ -208,7 +208,7 @@ body > main > div:nth-child(9) > div > div > ul > li:nth-child(5) {
   background-position: 0% 0%;
   height: 100px;
   color: transparent;
-  transition: background-position-x 0.3s ease;
+  transition: background-position-x calc(0.3s * var(--animation-speed-multiplyer)) ease;
 }
 
 .default-content-wrapper:has(#timelinegraph) {

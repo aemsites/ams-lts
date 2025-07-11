@@ -15,6 +15,7 @@ function updateAnimationSpeed() {
     root.style.setProperty('--animation-speed-multiplyer', '0');
   } else {
     root.style.setProperty('--animation-state', 'running');
+    root.style.setProperty('--animation-speed-multiplyer', '1');
   }
 }
 
