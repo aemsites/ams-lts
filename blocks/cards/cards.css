@@ -192,6 +192,15 @@ body > main > div:nth-child(9) > div > div > ul > li:nth-child(5) {
   z-index: 1;
 }
 
+.cards.cardousel.block > ul > li > .cards-card-body {
+  margin: 0 16px 0px 16px;
+}
+
+.cards.cardousel.block > ul > li > .cards-card-body > h2 {  
+  margin: 10px 3px 16px;
+  font-size: 26px;
+}
+
 #timelinegraph {
   background-image: url('/icons/7days.svg');
   background-size: 3864px;
