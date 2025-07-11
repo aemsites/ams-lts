@@ -1,0 +1,183 @@
+/* Container for all cards */
+.acardion-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px 64px;
+    margin: 0;
+  }
+  
+  .acardion-container > .default-content-wrapper {
+    margin: 0;
+  }
+    
+  /* Individual card */
+  .acardion-card {
+    height: 375px;
+    width: 448px;
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: black; /* Ensures text defaults to black */
+  }
+  
+  /* Image section */
+  .acardion-card-image-header {
+    height: 180px;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+  }
+  
+  .acardion-card-image-header img {
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .acardion-card:hover img {
+    transform: scale(1.05);
+  }
+  
+/* Ensure header text appears properly */
+.acardion-card-header {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 130%;
+    margin: 0; /* Remove margin to align with preview text */
+    color: black; /* Ensures header text is black */
+    text-align: left; /* Keep header aligned to the left */
+  }
+  
+/* Adjust accordion label to include header and preview text */
+.acardion-item-label {
+    display: flex; /* Align header, preview text, and arrow vertically */
+    flex-direction: column; /* Stack header, preview text, and arrow vertically */
+    align-items: flex-start; /* Align header and preview text to the left */
+    padding: 16px;
+    cursor: pointer;
+    background-color: var(--light-color);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 130%;
+    transition: background-color 0.2s, padding 0.3s ease; /* Smooth transition for padding */
+    color: black; /* Ensures accordion label text is black */
+  }
+
+  .acardion-item-label:hover {
+    background-color: #A3E4D7;
+  }
+  
+/* Arrow indicator */
+.acardion-item-label::after {
+    content: '';
+    display: inline-block;
+    margin-top: 8px; /* Add spacing below the preview text */
+    width: 8px;
+    height: 8px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg); /* Creates the arrow shape */
+    transition: transform 0.2s ease;
+    align-self: center; /* Center the arrow below the preview text */
+  }
+  
+  /* Styling for preview text */
+  .acardion-preview-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: gray; /* Use a lighter color to differentiate from the header */
+    margin-top: 8px; /* Add spacing below the header */
+    white-space: nowrap; /* Ensure preview text stays on a single line */
+    overflow: hidden; /* Prevent overflow if text is too long */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    display: block; /* Ensure it appears below the header */
+    text-align: left; /* Keep preview text aligned to the left */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for disappearing */
+  }
+
+  /* Rotate arrow when accordion is expanded */
+  .acardion-item[open] .acardion-item-label::after {
+    transform: rotate(-135deg); /* Rotates the arrow when expanded */
+  }
+  
+  /* Hide preview text when accordion is expanded */
+  .acardion-item[open] .acardion-preview-text {
+    opacity: 0; /* Fade out the preview text */
+    transform: translateY(-10px); /* Move the preview text slightly upwards */
+    margin-top: 0;
+    height: 0;
+  }
+  
+  /* Reduce padding when preview text is hidden */
+  .acardion-item[open] .acardion-item-label {
+    padding: 8px 16px; /* Reduce padding to remove blank white space */
+  }
+
+/* Accordion body */
+.acardion-item-body {
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    color: black; /* Ensures accordion body text is black */
+    background-color: var(--background-color); /* White background */
+    overflow: hidden; /* Prevents content from overflowing */
+    max-height: 0; /* Initially hidden */
+    transition: max-height 0.3s ease, padding 0.3s ease; /* Smooth transition */
+  }
+
+  /* When the accordion is expanded */
+  .acardion-item[open] .acardion-item-body {
+    max-height: 500px; /* Adjust based on expected content height */
+    padding: 16px; /* Restores padding when expanded */
+  }
+
+  /* Responsive styles */
+  @media (width <= 1600px) {
+    .acardion-container {
+      max-width: 1500px;
+      margin: 0;
+    }
+  
+    .acardion-card {
+      width: 448px;
+      height: 375px;
+    }
+  }
+  
+  @media (width <= 1280px) {
+    .acardion-container {
+      width: 100%;
+      margin: 0;
+    }
+  
+    .acardion-card {
+      width: 355px;
+      height: 375px;
+    }
+  }
+  
+  @media (width <= 900px) {
+    .acardion-container {
+      width: 100%;
+      margin: 0;
+    }
+  
+    .acardion-card {
+      width: 408px;
+      height: 375px;
+    }
+  }
+  
+  @media (width <= 600px) {
+    .acardion-container {
+      margin: 0;
+    }
+  
+    .acardion-card {
+      width: 272px;
+      height: 400px;
+    }
+  }
