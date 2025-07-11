@@ -193,7 +193,7 @@ body > main > div:nth-child(9) > div > div > ul > li:nth-child(5) {
 }
 
 .cards.cardousel.block > ul > li > .cards-card-body {
-  margin: 0 16px 0px 16px;
+  margin: 0 16px;
 }
 
 .cards.cardousel.block > ul > li > .cards-card-body > h2 {  
