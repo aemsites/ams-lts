@@ -159,6 +159,14 @@
     gap: 96px 40px;
 }
 
+body > main > div:nth-child(9) > div > div > ul > li:nth-child(1) {
+  width: 936px;
+}
+
+body > main > div:nth-child(9) > div > div > ul > li:nth-child(5) {
+  width: 936px;
+}
+
 .cards.cardousel.block > ul > li {
     overflow: hidden;
     justify-content: unset;
@@ -182,4 +190,42 @@
 .cards.cardousel.block > ul > li > div {
   position: relative;
   z-index: 1;
+}
+
+.cards.cardousel.block > ul > li > .cards-card-body {
+  margin: 0 16px;
+}
+
+.cards.cardousel.block > ul > li > .cards-card-body > h2 {  
+  margin: 10px 3px 16px;
+  font-size: 26px;
+}
+
+#timelinegraph {
+  background-image: url('/icons/7days.svg');
+  background-size: 3864px;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  height: 100px;
+  color: transparent;
+  transition: background-position-x calc(0.3s * var(--animation-speed-multiplyer)) ease;
+}
+
+.default-content-wrapper:has(#timelinegraph) {
+  overflow: hidden;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.cards-wrapper:has(.cards.cardousel.block) {
+  padding: 0;
+}
+
+.section.cards-container:has(.cards.cardousel.block) {
+  padding: 0;
+  margin: 0;
+}
+
+.section:has(#timelinegraph) {
+  margin: 0;
 }
