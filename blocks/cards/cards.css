@@ -199,8 +199,24 @@ body > main > div:nth-child(9) > div > div > ul > li:nth-child(5) {
   background-position: 0% 0%;
   height: 100px;
   color: transparent;
+  transition: background-position-x 0.3s ease;
 }
 
 .default-content-wrapper:has(#timelinegraph) {
   overflow: hidden;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.cards-wrapper:has(.cards.cardousel.block) {
+  padding: 0;
+}
+
+.section.cards-container:has(.cards.cardousel.block) {
+  padding: 0;
+  margin: 0;
+}
+
+.section:has(#timelinegraph) {
+  margin: 0;
 }

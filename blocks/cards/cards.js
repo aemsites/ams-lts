@@ -52,11 +52,14 @@ export default function decorate(block) {
     let isDragging = false;
     let startX;
     let scrollLeft;
+    let targetScrollLeft = container.scrollLeft;
+    let animationFrameId = null;
 
     // Function to update background-position and sync all carousels
     const updateScrollAndBackground = (targetContainer, newScrollLeft) => {
       const maxScrollLeft = targetContainer.scrollWidth - targetContainer.clientWidth;
-      const scrollRatio = maxScrollLeft > 0 ? newScrollLeft / maxScrollLeft : 0;
+      const clampedScrollLeft = Math.max(0, Math.min(newScrollLeft, maxScrollLeft));
+      const scrollRatio = maxScrollLeft > 0 ? clampedScrollLeft / maxScrollLeft : 0;
       const backgroundPositionX = scrollRatio * 100;
 
       // Update background-position of timelineGraph
@@ -69,6 +72,26 @@ export default function decorate(block) {
           otherContainer.scrollLeft = scrollRatio * otherMaxScrollLeft;
         }
       });
+
+      // Update targetContainer's scrollLeft to ensure exact boundary alignment
+      targetContainer.scrollLeft = clampedScrollLeft;
+    };
+
+    // Function to smoothly animate scrollLeft
+    const smoothScroll = () => {
+      const currentScrollLeft = container.scrollLeft;
+      const delta = targetScrollLeft - currentScrollLeft;
+
+      if (Math.abs(delta) < 0.1) { // Increased precision for convergence
+        container.scrollLeft = targetScrollLeft;
+        updateScrollAndBackground(container, targetScrollLeft);
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      } else {
+        container.scrollLeft += delta * 0.2; // Keep lerp factor for smooth delay
+        updateScrollAndBackground(container, container.scrollLeft);
+        animationFrameId = requestAnimationFrame(smoothScroll);
+      }
     };
 
     // Mouse events for dragging
@@ -78,6 +101,8 @@ export default function decorate(block) {
       container.classList.add('grabbing');
       startX = e.pageX - container.offsetLeft;
       scrollLeft = container.scrollLeft;
+      targetScrollLeft = scrollLeft;
+      cancelAnimationFrame(animationFrameId);
       e.preventDefault();
     });
 
@@ -98,6 +123,7 @@ export default function decorate(block) {
       const walk = (x - startX) * 2;
       const newScrollLeft = scrollLeft - walk;
       container.scrollLeft = newScrollLeft;
+      targetScrollLeft = newScrollLeft;
       updateScrollAndBackground(container, newScrollLeft);
     });
 
@@ -106,6 +132,8 @@ export default function decorate(block) {
       isDragging = true;
       startX = e.touches[0].pageX - container.offsetLeft;
       scrollLeft = container.scrollLeft;
+      targetScrollLeft = scrollLeft;
+      cancelAnimationFrame(animationFrameId);
     });
 
     container.addEventListener('touchend', () => {
@@ -128,14 +156,15 @@ export default function decorate(block) {
       }
 
       container.scrollLeft = newScrollLeft;
+      targetScrollLeft = newScrollLeft;
       updateScrollAndBackground(container, newScrollLeft);
     });
 
-    // Mouse wheel scrolling
+    // Mouse wheel scrolling with smooth animation
     container.addEventListener('wheel', (e) => {
       const maxScrollLeft = container.scrollWidth - container.clientWidth;
-      const isAtStart = container.scrollLeft === 0;
-      const isAtEnd = container.scrollLeft >= maxScrollLeft - 1;
+      const isAtStart = container.scrollLeft <= 1; // Tolerance for start
+      const isAtEnd = container.scrollLeft >= maxScrollLeft - 1; // Tolerance for end
 
       // Allow native page scrolling if at boundaries
       if (
@@ -143,18 +172,24 @@ export default function decorate(block) {
         || (isAtEnd && e.deltaY > 0) // Scrolling right at end
         || Math.abs(e.deltaX) > Math.abs(e.deltaY) // Native horizontal scrolling
       ) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
         return;
       }
 
       e.preventDefault();
-      const newScrollLeft = container.scrollLeft + e.deltaY * 2;
-      container.scrollLeft = newScrollLeft;
-      updateScrollAndBackground(container, newScrollLeft);
+      targetScrollLeft = Math.max(0, Math.min(targetScrollLeft + e.deltaY * 3, maxScrollLeft));
+      if (!animationFrameId) {
+        animationFrameId = requestAnimationFrame(smoothScroll);
+      }
     });
 
-    // Update background-position and sync on scroll
+    // Update background-position and sync on scroll (for non-wheel events)
     container.addEventListener('scroll', () => {
-      updateScrollAndBackground(container, container.scrollLeft);
+      if (!isDragging && !animationFrameId) {
+        targetScrollLeft = container.scrollLeft;
+        updateScrollAndBackground(container, container.scrollLeft);
+      }
     });
   });
 
