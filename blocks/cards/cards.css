@@ -159,6 +159,14 @@
     gap: 96px 40px;
 }
 
+body > main > div:nth-child(9) > div > div > ul > li:nth-child(1) {
+  width: 936px;
+}
+
+body > main > div:nth-child(9) > div > div > ul > li:nth-child(5) {
+  width: 936px;
+}
+
 .cards.cardousel.block > ul > li {
     overflow: hidden;
     justify-content: unset;
@@ -182,4 +190,17 @@
 .cards.cardousel.block > ul > li > div {
   position: relative;
   z-index: 1;
+}
+
+#timelinegraph {
+  background-image: url('/icons/7days.svg');
+  background-size: 3864px;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  height: 100px;
+  color: transparent;
+}
+
+.default-content-wrapper:has(#timelinegraph) {
+  overflow: hidden;
 }

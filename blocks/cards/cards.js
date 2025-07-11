@@ -43,66 +43,119 @@ export default function decorate(block) {
     ul.append(li);
   });
 
-  const container = document.querySelector('.cards.cardousel.block');
-  let isDragging = false;
-  let startX;
-  let scrollLeft;
+  // Select all carousels and the timeline graph
+  const containers = document.querySelectorAll('.cards.cardousel.block');
+  const timelineGraph = document.querySelector('#timelinegraph');
 
-  // Mouse events for dragging
-  container.addEventListener('mousedown', (e) => {
-    // Only start dragging if the left mouse button is pressed
-    if (e.button !== 0) return;
-    isDragging = true;
-    container.classList.add('grabbing');
-    startX = e.pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
-  });
+  // Apply dragging, scrolling, and background-position update to each carousel
+  containers.forEach((container) => {
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
 
-  container.addEventListener('mouseleave', () => {
-    isDragging = false;
-    container.classList.remove('grabbing');
-  });
+    // Function to update background-position and sync all carousels
+    const updateScrollAndBackground = (targetContainer, newScrollLeft) => {
+      const maxScrollLeft = targetContainer.scrollWidth - targetContainer.clientWidth;
+      const scrollRatio = maxScrollLeft > 0 ? newScrollLeft / maxScrollLeft : 0;
+      const backgroundPositionX = scrollRatio * 100;
 
-  container.addEventListener('mouseup', () => {
-    isDragging = false;
-    container.classList.remove('grabbing');
-  });
+      // Update background-position of timelineGraph
+      timelineGraph.style.backgroundPositionX = `${backgroundPositionX}%`;
 
-  container.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    e.preventDefault(); // Prevent text selection during drag
-    const x = e.pageX - container.offsetLeft;
-    const walk = (x - startX) * 2; // Adjust drag speed
-    container.scrollLeft = scrollLeft - walk;
-  });
+      // Sync scroll position of all other carousels
+      containers.forEach((otherContainer) => {
+        if (otherContainer !== targetContainer) {
+          const otherMaxScrollLeft = otherContainer.scrollWidth - otherContainer.clientWidth;
+          otherContainer.scrollLeft = scrollRatio * otherMaxScrollLeft;
+        }
+      });
+    };
 
-  // Touch events for swiping
-  container.addEventListener('touchstart', (e) => {
-    isDragging = true;
-    startX = e.touches[0].pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
-  });
+    // Mouse events for dragging
+    container.addEventListener('mousedown', (e) => {
+      if (e.button !== 0) return;
+      isDragging = true;
+      container.classList.add('grabbing');
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+      e.preventDefault();
+    });
 
-  container.addEventListener('touchend', () => {
-    isDragging = false;
-  });
+    container.addEventListener('mouseleave', () => {
+      isDragging = false;
+      container.classList.remove('grabbing');
+    });
 
-  container.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    const x = e.touches[0].pageX - container.offsetLeft;
-    const walk = (x - startX) * 2; // Adjust drag speed
-    container.scrollLeft = scrollLeft - walk;
-  });
+    container.addEventListener('mouseup', () => {
+      isDragging = false;
+      container.classList.remove('grabbing');
+    });
 
-  // Ensure mouse wheel scrolling works naturally
-  container.addEventListener('wheel', (e) => {
-    // Allow default horizontal scrolling if the wheel event is primarily horizontal
-    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-      return; // Let the browser handle horizontal wheel scrolling
-    }
-    // For vertical wheel scrolling, translate to horizontal
-    e.preventDefault(); // Prevent vertical page scrolling
-    container.scrollLeft += e.deltaY * 2; // Adjust scroll speed
+    container.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 2;
+      const newScrollLeft = scrollLeft - walk;
+      container.scrollLeft = newScrollLeft;
+      updateScrollAndBackground(container, newScrollLeft);
+    });
+
+    // Touch events for dragging
+    container.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      startX = e.touches[0].pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+    });
+
+    container.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    container.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const x = e.touches[0].pageX - container.offsetLeft;
+      const walk = (x - startX) * 2;
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+      const newScrollLeft = scrollLeft - walk;
+
+      // Only prevent default scrolling if carousel can scroll in the direction
+      if (
+        (walk > 0 && container.scrollLeft > 0) // Swiping right, not at start
+        || (walk < 0 && container.scrollLeft < maxScrollLeft) // Swiping left, not at end
+      ) {
+        e.preventDefault();
+      }
+
+      container.scrollLeft = newScrollLeft;
+      updateScrollAndBackground(container, newScrollLeft);
+    });
+
+    // Mouse wheel scrolling
+    container.addEventListener('wheel', (e) => {
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+      const isAtStart = container.scrollLeft === 0;
+      const isAtEnd = container.scrollLeft >= maxScrollLeft - 1;
+
+      // Allow native page scrolling if at boundaries
+      if (
+        (isAtStart && e.deltaY < 0) // Scrolling left at start
+        || (isAtEnd && e.deltaY > 0) // Scrolling right at end
+        || Math.abs(e.deltaX) > Math.abs(e.deltaY) // Native horizontal scrolling
+      ) {
+        return;
+      }
+
+      e.preventDefault();
+      const newScrollLeft = container.scrollLeft + e.deltaY * 2;
+      container.scrollLeft = newScrollLeft;
+      updateScrollAndBackground(container, newScrollLeft);
+    });
+
+    // Update background-position and sync on scroll
+    container.addEventListener('scroll', () => {
+      updateScrollAndBackground(container, container.scrollLeft);
+    });
   });
 
   ul.querySelectorAll('picture > img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
