@@ -41,10 +41,35 @@ export default function decorate(block) {
     if (paragraph) {
       const previewText = document.createElement('span');
       previewText.className = 'acardion-preview-text';
-      const fullText = paragraph.textContent.trim();
-      previewText.textContent = fullText.length > 65
-        ? `${fullText.slice(0, 65)}...` // Limit to 60 characters and add "..."
-        : fullText; // Use full text if it's shorter than 60 characters
+
+      const updatePreviewText = () => {
+        const fullText = paragraph.textContent.trim();
+
+        // Adjust maxLength based on responsive sizes
+        let maxLength = 65; // Default preview text length
+        const viewportWidth = window.innerWidth;
+
+        if (viewportWidth <= 600) {
+          maxLength = 38; // For widths <= 600px
+        } else if (viewportWidth <= 900) {
+          maxLength = 60; // For widths <= 900px
+        } else if (viewportWidth <= 1280) {
+          maxLength = 50; // For widths <= 1280px
+        } else if (viewportWidth <= 1600) {
+          maxLength = 65; // For widths <= 1600px
+        }
+
+        previewText.textContent = fullText.length > maxLength
+          ? `${fullText.slice(0, maxLength)}...`
+          : fullText;
+      };
+
+      // Initial calculation
+      updatePreviewText();
+
+      // Update preview text on window resize
+      window.addEventListener('resize', updatePreviewText);
+
       summary.append(previewText); // Append preview text below the header
 
       const body = document.createElement('div');
