@@ -202,12 +202,12 @@
 
 #improved-performance {
   color: rgb(4 144 255 / 59%);
-  font-size: 40px;
+  font-size: 35px;
   white-space: nowrap;
   line-height: 75px;
   z-index: 1;
   position: absolute;
-  top: 40%;
+  top: 41%;
   left: -10%;
   opacity: 0;
   animation: fade-in-out-1 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
@@ -237,12 +237,12 @@
 
 #enhanced-security {
   color: rgb(4 144 255 / 59%);
-  font-size: 45px;
+  font-size: 35px;
   white-space: nowrap;
   line-height: 75px;
   z-index: 1;
   position: absolute;
-  top: 40%;
+  top: 41%;
   left: -10%;
   opacity: 0;
   animation: fade-in-out-2 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
@@ -272,12 +272,12 @@
 
 #future-proofing {
   color: rgb(4 144 255 / 59%);
-  font-size: 45px;
+  font-size: 35px;
   white-space: nowrap;
   line-height: 75px;
   z-index: 1;
   position: absolute;
-  top: 40%;
+  top: 41%;
   left: -10%;
   opacity: 0;
   animation: fade-in-out-3 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
@@ -307,12 +307,12 @@
 
 #long-term-support {
   color: rgb(4 144 255 / 59%);
-  font-size: 45px;
+  font-size: 35px;
   white-space: nowrap;
   line-height: 75px;
   z-index: 1;
   position: absolute;
-  top: 40%;
+  top: 41%;
   left: -10%;
   opacity: 0;
   animation: fade-in-out-4 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
@@ -341,14 +341,14 @@
   }
 }
 
-#aem-lts {
+#aem-65-long-term-support-lts {
   color: rgb(4 144 255 / 59%);
-  font-size: 70px;
+  font-size: 27px;
   line-height: 75px;
   white-space: nowrap;
   z-index: 1;
   position: absolute;
-  top: 36%;
+  top: 42%;
   left: 20%;
   opacity: 0;
   animation: fade-in-out-5 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
@@ -409,22 +409,27 @@
   }
 
   #long-term-support {
-    font-size: 70px;
-    top: 36%;
+    font-size: 50px;
+    top: 38.5%;
   }
 
   #future-proofing {
-    font-size: 70px;
-    top: 36%;
+    font-size: 50px;
+    top: 38.5%;
   }
 
   #enhanced-security {
-    font-size: 70px;
-    top: 36%;
+    font-size: 50px;
+    top: 38.5%;
   }
 
   #improved-performance {
-    font-size: 70px;
-    top: 36%;
+    font-size: 50px;
+    top: 38.5%;
+  }
+
+  #aem-65-long-term-support-lts {
+    font-size: 50px;
+    top: 38.5%;
   }
 }
