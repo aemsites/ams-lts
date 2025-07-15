@@ -32,7 +32,8 @@
 
 .hero.block {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  height: 100vh;
 }
 
 .mayan {
@@ -46,10 +47,10 @@
   background-size: cover;
   transform-origin: center center;
   animation:
-    spin-mayan 200s linear infinite;
+    spin-mayan 600s linear infinite;
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.2; /* Slightly transparent for effect */
+  opacity: 0.05; /* Slightly transparent for effect */
 }
 
 @keyframes spin-mayan{ 
@@ -68,10 +69,10 @@
   background-image: url('/icons/signs.svg');
   background-size: cover;
   transform-origin: center center;
-  animation: spin-signs 90s linear infinite; /* Spinning animation */
+  animation: spin-signs 180s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.3;
+  opacity: 0.06;
 }
 
 @keyframes spin-signs{
@@ -90,10 +91,10 @@
   background-image: url('/icons/years.svg');
   background-size: cover;
   transform-origin: center center;
-  animation: spin-years 40s linear infinite; /* Spinning animation */
+  animation: spin-years 120s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.3;
+  opacity: 0.07;
 }
 
 @keyframes spin-years{
@@ -112,10 +113,10 @@
   background-image: url('/icons/days.svg');
   background-size: cover;
   transform-origin: center center;
-  animation: spin-days 25s linear infinite; /* Spinning animation */
+  animation: spin-days 75s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.4;
+  opacity: 0.08;
 }
 
 @keyframes spin-days{
@@ -134,10 +135,10 @@
   background-image: url('/icons/oldclock.svg');
   background-size: cover;
   transform-origin: center center;
-  animation: spin-hrs 18s linear infinite; /* Spinning animation */
+  animation: spin-hrs 54s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.4;
+  opacity: 0.09;
 }
 
 @keyframes spin-hrs{
@@ -156,10 +157,10 @@
   background-image: url('/icons/minutes.svg');
   background-size: cover;
   transform-origin: center center;
-  animation: spin-min 12s linear infinite; /* Spinning animation */
+  animation: spin-min 36s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.4;
+  opacity: 0.1;
 }
 
 @keyframes spin-min {
@@ -178,10 +179,10 @@
   background-image: url('/icons/milisec.svg');
   background-size: cover;
   transform-origin: center center;
-  animation: spin-ms 5s linear infinite; /* Spinning animation */
+  animation: spin-ms 15s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.4;
+  opacity: 0.1;
 }
 
 @keyframes spin-ms {
@@ -190,204 +191,95 @@
   100% { transform: perspective(300px) rotateY(25deg) rotate(0deg); }
 }
 
-#the-future-is {
+#adobe-experience-manager-aem-65-long-term-support-lts-is-here {
   color: white;
+  font-size: 41px;
+  font-weight: 200;
+  white-space: wrap;
+  z-index: 1;
+  position: relative;
+  padding-top: 32vh;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+#get-ready-for {
+  color: white;
+  font-size: 25px;
   font-weight: 200;
   white-space: nowrap;
   z-index: 1;
-  position: absolute;
-  top: 31.4%;
-  left: 14%;
+  position: relative;
+  padding-left: 25%;
 }
 
-#improved-performance {
-  color: rgb(4 144 255 / 59%);
-  font-size: 35px;
-  white-space: nowrap;
-  line-height: 75px;
-  z-index: 1;
-  position: absolute;
-  top: 41%;
-  left: -10%;
-  opacity: 0;
-  animation: fade-in-out-1 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
-  animation-delay: calc(0 * var(--animation-hero-text-duration) * var(--animation-speed-multiplyer));
+#get-ready-for::after{
+  content: 'Improved Performance';
+  animation: new-ani 8s linear infinite;
   animation-fill-mode: forwards;
+  color: rgb(42 173 255);
+  font-weight: bold;
+  font-size: 60px;
 }
 
-@keyframes fade-in-out-1 {
-  0% {left: 35%; opacity: 0;
+@keyframes new-ani {
+  0% { content: ' Improved Performance'; opacity: 0; padding-left: 100px;
   }
-
-  5% {left: 25%; opacity: 0;
+ 
+  2% { content: ' Improved Performance'; opacity: 1; padding-left: 30px;
   }
-
-  10% {left: 23%; opacity: 1;
-  }
-
-  90% {left: 20%; opacity: 1;
-  }
-
-  95% {left: -10%; opacity: 0;
-  }
-
-  100% {left: -10%; opacity: 0;
-  }
-}
-
-#enhanced-security {
-  color: rgb(4 144 255 / 59%);
-  font-size: 35px;
-  white-space: nowrap;
-  line-height: 75px;
-  z-index: 1;
-  position: absolute;
-  top: 41%;
-  left: -10%;
-  opacity: 0;
-  animation: fade-in-out-2 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
-  animation-delay: calc(1 * var(--animation-hero-text-duration) * var(--animation-speed-multiplyer));
-  animation-fill-mode: forwards;
-}
-
-@keyframes fade-in-out-2 {
-  0% {left: 35%; opacity: 0;
-  }
-
-  5% {left: 25%; opacity: 0;
-  }
-
-  10% {left: 23%; opacity: 1;
-  }
-
-  90% {left: 20%; opacity: 1;
-  }
-
-  95% {left: -10%; opacity: 0;
-  }
-
-  100% {left: -10%; opacity: 0;
-  }
-}
-
-#future-proofing {
-  color: rgb(4 144 255 / 59%);
-  font-size: 35px;
-  white-space: nowrap;
-  line-height: 75px;
-  z-index: 1;
-  position: absolute;
-  top: 41%;
-  left: -10%;
-  opacity: 0;
-  animation: fade-in-out-3 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
-  animation-delay: calc(2 * var(--animation-hero-text-duration) * var(--animation-speed-multiplyer));
-  animation-fill-mode: forwards;
-}
-
-@keyframes fade-in-out-3 {
-  0% {left: 35%; opacity: 0;
-  }
-
-  5% {left: 25%; opacity: 0;
-  }
-
-  10% {left: 23%; opacity: 1;
-  }
-
-  90% {left: 20%; opacity: 1;
-  }
-
-  95% {left: -10%; opacity: 0;
-  }
-
-  100% {left: -10%; opacity: 0;
-  }
-}
-
-#long-term-support {
-  color: rgb(4 144 255 / 59%);
-  font-size: 35px;
-  white-space: nowrap;
-  line-height: 75px;
-  z-index: 1;
-  position: absolute;
-  top: 41%;
-  left: -10%;
-  opacity: 0;
-  animation: fade-in-out-4 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
-  animation-delay: calc(3 * var(--animation-hero-text-duration) * var(--animation-speed-multiplyer));
-  animation-fill-mode: forwards;
   
-}
-
-@keyframes fade-in-out-4 {
-  0% {left: 35%; opacity: 0;
+  22% { content: ' Improved Performance'; opacity: 1; padding-left: 0;
   }
 
-  5% {left: 25%; opacity: 0;
+  25% { content: ' Improved Performance'; opacity: 0; padding-left: 0;
   }
 
-  10% {left: 23%; opacity: 1;
+  26% { content: ' Enhanced Security'; opacity: 0; padding-left: 100px;
   }
 
-  90% {left: 20%; opacity: 1;
+  28% { content: ' Enhanced Security'; opacity: 1; padding-left: 30px;
   }
 
-  95% {left: -10%; opacity: 0;
+  47% { content: ' Enhanced Security'; opacity: 1; padding-left: 0;
   }
 
-  100% {left: -10%; opacity: 0;
-  }
-}
-
-#aem-65-long-term-support-lts {
-  color: rgb(4 144 255 / 59%);
-  font-size: 27px;
-  line-height: 75px;
-  white-space: nowrap;
-  z-index: 1;
-  position: absolute;
-  top: 42%;
-  left: 20%;
-  opacity: 0;
-  animation: fade-in-out-5 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
-  animation-delay: calc(4 * var(--animation-hero-text-duration) * var(--animation-speed-multiplyer));
-  animation-fill-mode: forwards;
-}
-
-@keyframes fade-in-out-5 {
-  0% {left: 35%; opacity: 0;
+  50% { content: ' Enhanced Security'; opacity: 0; padding-left: 0;
   }
 
-  5% {left: 25%; opacity: 0;
+  51% { content: ' Future Proofing'; opacity: 0; padding-left: 100px;
   }
 
-  10% {left: 23%; opacity: 1;
+  53% { content: ' Future Proofing'; opacity: 1; padding-left: 30px;
   }
 
-  80% {left: 20%; opacity: 1;
+  72% { content: ' Future Proofing'; opacity: 1; padding-left: 0;
   }
 
-  100% {left: 20%; opacity: 1;
+  75% { content: ' Future Proofing'; opacity: 0; padding-left: 0;
   }
 
+  76% { content: ' Long Term Support'; opacity: 0; padding-left: 100px;
+  }
+
+  78% { content: ' Long Term Support'; opacity: 1; padding-left: 30px;
+  }
+
+  97% { content: ' Long Term Support'; opacity: 1; padding-left: 0;
+  }
+
+  100% { content: ' Long Term Support'; opacity: 0; padding-left: 0;
+  }
 }
 
 .hero.block > div > div > h3 {
   color: rgb(255 255 255);
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 200;
   z-index: 1;
-  position: absolute;
-  top: 54.4%;
-  left: 20%;
-  margin-right: 80px;
-  opacity: 1;
-  animation: fade-in-out-6 2s linear;
-  animation-delay: calc(5 * var(--animation-hero-text-duration) * var(--animation-speed-multiplyer));
-  animation-fill-mode: forwards;
-
+  position: relative;
+  padding-left: 25%;
+  padding-right: 15%;
 }
 
 @keyframes fade-in-out-6 {
@@ -406,30 +298,5 @@
 @media (width >= 900px) {
   .hero {
     padding: 40px 32px;
-  }
-
-  #long-term-support {
-    font-size: 50px;
-    top: 38.5%;
-  }
-
-  #future-proofing {
-    font-size: 50px;
-    top: 38.5%;
-  }
-
-  #enhanced-security {
-    font-size: 50px;
-    top: 38.5%;
-  }
-
-  #improved-performance {
-    font-size: 50px;
-    top: 38.5%;
-  }
-
-  #aem-65-long-term-support-lts {
-    font-size: 50px;
-    top: 38.5%;
   }
 }

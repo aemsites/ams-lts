@@ -69,7 +69,7 @@
 
   /* hero animation ini */
   --animation-speed-multiplyer: 1;
-  --animation-hero-text-duration: 2s;
+  --animation-hero-text-duration: 8s;
 }
 
 /* fallback fonts */
@@ -179,6 +179,10 @@ pre {
   background-color: var(--light-color);
   overflow-x: auto;
   white-space: pre;
+}
+
+main {
+  overflow: hidden;
 }
 
 main > div {
@@ -293,7 +297,9 @@ main > .section:first-of-type {
 }
 
 .dark {
-  background: linear-gradient(0deg, var(--spectrum-purple-1000), var(--spectrum-magenta-900), var(--spectrum-blue-1000));
+  background-size: 100%;
+  background-image: url('/icons/spectrum-bg.svg'), linear-gradient(0deg, #7154fa, #eb1000);
+  background-repeat: no-repeat;
   color: var(--light-color);
 
   a {
