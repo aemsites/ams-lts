@@ -47,10 +47,10 @@
   background-size: cover;
   transform-origin: center center;
   animation:
-    spin-mayan 200s linear infinite;
+    spin-mayan 600s linear infinite;
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.1; /* Slightly transparent for effect */
+  opacity: 0.03; /* Slightly transparent for effect */
 }
 
 @keyframes spin-mayan{ 
@@ -70,10 +70,10 @@
   background-image: url('/experiments/icons/signs.svg');
   background-size: cover;
   transform-origin: center center;
-  animation: spin-signs 90s linear infinite; /* Spinning animation */
+  animation: spin-signs 180s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.1;
+  opacity: 0.03;
 }
 
 @keyframes spin-signs{
@@ -93,10 +93,10 @@
   background-image: url('/experiments/icons/years.svg');
   background-size: cover;
   transform-origin: center center;
-  animation: spin-years 40s linear infinite; /* Spinning animation */
+  animation: spin-years 120s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.1;
+  opacity: 0.04;
 }
 
 @keyframes spin-years{
@@ -116,10 +116,10 @@
   background-image: url('/experiments/icons/days.svg');
   background-size: cover;
   transform-origin: center center;
-  animation: spin-days 25s linear infinite; /* Spinning animation */
+  animation: spin-days 75s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.2;
+  opacity: 0.05;
 }
 
 @keyframes spin-days{
@@ -139,10 +139,10 @@
   background-image: url('/experiments/icons/oldclock.svg');
   background-size: cover;
   transform-origin: center center;
-  animation: spin-hrs 18s linear infinite; /* Spinning animation */
+  animation: spin-hrs 54s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.2;
+  opacity: 0.05;
 }
 
 @keyframes spin-hrs{
@@ -162,10 +162,10 @@
   background-image: url('/experiments/icons/minutes.svg');
   background-size: cover;
   transform-origin: center center;
-  animation: spin-min 12s linear infinite; /* Spinning animation */
+  animation: spin-min 36s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.2;
+  opacity: 0.05;
 }
 
 @keyframes spin-min {
@@ -185,10 +185,10 @@
   background-image: url('/experiments/icons/milisec.svg');
   background-size: cover;
   transform-origin: center center;
-  animation: spin-ms 5s linear infinite; /* Spinning animation */
+  animation: spin-ms 30s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.2;
+  opacity: 0.05;
 }
 
 @keyframes spin-ms {
