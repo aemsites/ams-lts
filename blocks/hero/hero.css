@@ -33,12 +33,12 @@
 .hero.block {
   position: relative;
   overflow: visible;
+  height: 100vh;
 }
 
 .mayan {
   color: transparent;
   position: absolute;
-  z-index: -1;
   top: -500px;
   left: 0;
   width: 2500px;
@@ -50,7 +50,7 @@
     spin-mayan 600s linear infinite;
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.03; /* Slightly transparent for effect */
+  opacity: 0.05; /* Slightly transparent for effect */
 }
 
 @keyframes spin-mayan{ 
@@ -62,7 +62,6 @@
 .signs {
   color: transparent;
   position: absolute;
-  z-index: -1;
   top: -200px;
   left: 0;
   width: 2000px;
@@ -73,7 +72,7 @@
   animation: spin-signs 180s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.03;
+  opacity: 0.06;
 }
 
 @keyframes spin-signs{
@@ -85,7 +84,6 @@
 .years {
   color: transparent;
   position: absolute;
-  z-index: -1;
   top: -100px;
   left: 0;
   width: 1500px;
@@ -96,7 +94,7 @@
   animation: spin-years 120s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.04;
+  opacity: 0.07;
 }
 
 @keyframes spin-years{
@@ -108,7 +106,6 @@
 .days {
   color: transparent;
   position: absolute;
-  z-index: -1;
   top: -50px;
   left: 0;
   width: 1200px;
@@ -119,7 +116,7 @@
   animation: spin-days 75s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.05;
+  opacity: 0.08;
 }
 
 @keyframes spin-days{
@@ -131,7 +128,6 @@
 .hrs {
   color: transparent;
   position: absolute;
-  z-index: -1;
   top: -10px;
   left: 0;
   width: 1000px;
@@ -142,7 +138,7 @@
   animation: spin-hrs 54s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.05;
+  opacity: 0.09;
 }
 
 @keyframes spin-hrs{
@@ -154,7 +150,6 @@
 .min {
   color: transparent;
   position: absolute;
-  z-index: -1;
   top: 100px;
   left: 0;
   width: 800px;
@@ -165,7 +160,7 @@
   animation: spin-min 36s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.05;
+  opacity: 0.1;
 }
 
 @keyframes spin-min {
@@ -177,7 +172,6 @@
 .ms {
   color: transparent;
   position: absolute;
-  z-index: -1;
   top: 200px;
   left: 0;
   width: 700px;
@@ -185,10 +179,10 @@
   background-image: url('/icons/milisec.svg');
   background-size: cover;
   transform-origin: center center;
-  animation: spin-ms 30s linear infinite; /* Spinning animation */
+  animation: spin-ms 15s linear infinite; /* Spinning animation */
   animation-play-state: var(--animation-state);
   bottom: 0; /* Start at bottom for crawl */
-  opacity: 0.05;
+  opacity: 0.1;
 }
 
 @keyframes spin-ms {
@@ -197,204 +191,67 @@
   100% { transform: perspective(300px) rotateY(25deg) rotate(0deg); }
 }
 
-#the-future-is {
-  color: var(--light-color);
+#adobe-experience-manager-aem-65-long-term-support-lts-is-here {
+  color: white;
+  font-size: 41px;
+  font-weight: 200;
+  white-space: wrap;
+  z-index: 1;
+  position: relative;
+  padding-top: 32vh;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+#get-ready-for {
+  color: white;
+  font-size: 25px;
   font-weight: 200;
   white-space: nowrap;
   z-index: 1;
-  position: absolute;
-  top: 31.4%;
-  left: 14%;
+  position: relative;
+  padding-left: 25%;
 }
 
-#improved-performance {
-  color: rgb(43 160 255 / 100%);
-  font-size: 40px;
-  white-space: nowrap;
-  line-height: 75px;
-  z-index: 1;
-  position: absolute;
-  top: 40%;
-  left: -10%;
-  opacity: 0;
-  animation: fade-in-out-1 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
-  animation-delay: calc(0 * var(--animation-hero-text-duration) * var(--animation-speed-multiplyer));
+#get-ready-for::after{
+  content: 'Improved Performance';
+  animation: new-ani 8s linear infinite;
   animation-fill-mode: forwards;
+  color: rgb(42, 173, 255);
+  font-weight: bold;
+  font-size: 60px;
 }
 
-@keyframes fade-in-out-1 {
-  0% {left: 35%; opacity: 0;
-  }
+@keyframes new-ani {
+  0% { content: ' Improved Performance'; opacity: 0; padding-left: 100px;}
+  2% { content: ' Improved Performance'; opacity: 1; padding-left: 30px;}
+  22% { content: ' Improved Performance'; opacity: 1; padding-left: 0px;}
+  25% { content: ' Improved Performance'; opacity: 0; padding-left: 0px;}
 
-  5% {left: 25%; opacity: 0;
-  }
+  26% { content: ' Enhanced Security'; opacity: 0; padding-left: 100px;}
+  28% { content: ' Enhanced Security'; opacity: 1; padding-left: 30px;}
+  47% { content: ' Enhanced Security'; opacity: 1; padding-left: 0px;}
+  50% { content: ' Enhanced Security'; opacity: 0; padding-left: 0px;}
 
-  10% {left: 23%; opacity: 1;
-  }
+  51% { content: ' Future Proofing'; opacity: 0; padding-left: 100px;}
+  53% { content: ' Future Proofing'; opacity: 1; padding-left: 30px;}
+  72% { content: ' Future Proofing'; opacity: 1; padding-left: 0px;}
+  75% { content: ' Future Proofing'; opacity: 0; padding-left: 0px;}
 
-  90% {left: 20%; opacity: 1;
-  }
-
-  95% {left: -10%; opacity: 0;
-  }
-
-  100% {left: -10%; opacity: 0;
-  }
-}
-
-#enhanced-security {
-  color: rgb(43 160 255 / 100%);
-  font-size: 45px;
-  white-space: nowrap;
-  line-height: 75px;
-  z-index: 1;
-  position: absolute;
-  top: 40%;
-  left: -10%;
-  opacity: 0;
-  animation: fade-in-out-2 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
-  animation-delay: calc(1 * var(--animation-hero-text-duration) * var(--animation-speed-multiplyer));
-  animation-fill-mode: forwards;
-}
-
-@keyframes fade-in-out-2 {
-  0% {left: 35%; opacity: 0;
-  }
-
-  5% {left: 25%; opacity: 0;
-  }
-
-  10% {left: 23%; opacity: 1;
-  }
-
-  90% {left: 20%; opacity: 1;
-  }
-
-  95% {left: -10%; opacity: 0;
-  }
-
-  100% {left: -10%; opacity: 0;
-  }
-}
-
-#future-proofing {
-  color: rgb(43 160 255 / 100%);
-  font-size: 45px;
-  white-space: nowrap;
-  line-height: 75px;
-  z-index: 1;
-  position: absolute;
-  top: 40%;
-  left: -10%;
-  opacity: 0;
-  animation: fade-in-out-3 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
-  animation-delay: calc(2 * var(--animation-hero-text-duration) * var(--animation-speed-multiplyer));
-  animation-fill-mode: forwards;
-}
-
-@keyframes fade-in-out-3 {
-  0% {left: 35%; opacity: 0;
-  }
-
-  5% {left: 25%; opacity: 0;
-  }
-
-  10% {left: 23%; opacity: 1;
-  }
-
-  90% {left: 20%; opacity: 1;
-  }
-
-  95% {left: -10%; opacity: 0;
-  }
-
-  100% {left: -10%; opacity: 0;
-  }
-}
-
-#long-term-support {
-  color: rgb(43 160 255 / 100%);
-  font-size: 45px;
-  white-space: nowrap;
-  line-height: 75px;
-  z-index: 1;
-  position: absolute;
-  top: 40%;
-  left: -10%;
-  opacity: 0;
-  animation: fade-in-out-4 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
-  animation-delay: calc(3 * var(--animation-hero-text-duration) * var(--animation-speed-multiplyer));
-  animation-fill-mode: forwards;
-  
-}
-
-@keyframes fade-in-out-4 {
-  0% {left: 35%; opacity: 0;
-  }
-
-  5% {left: 25%; opacity: 0;
-  }
-
-  10% {left: 23%; opacity: 1;
-  }
-
-  90% {left: 20%; opacity: 1;
-  }
-
-  95% {left: -10%; opacity: 0;
-  }
-
-  100% {left: -10%; opacity: 0;
-  }
-}
-
-#aem-lts {
-  color: rgb(43 160 255 / 100%);
-  font-size: 70px;
-  line-height: 75px;
-  white-space: nowrap;
-  z-index: 1;
-  position: absolute;
-  top: 36%;
-  left: 20%;
-  opacity: 0;
-  animation: fade-in-out-5 calc(var(--animation-hero-text-duration) * var(--animation-speed-multiplyer)) linear;
-  animation-delay: calc(4 * var(--animation-hero-text-duration) * var(--animation-speed-multiplyer));
-  animation-fill-mode: forwards;
-}
-
-@keyframes fade-in-out-5 {
-  0% {left: 35%; opacity: 0;
-  }
-
-  5% {left: 25%; opacity: 0;
-  }
-
-  10% {left: 23%; opacity: 1;
-  }
-
-  80% {left: 20%; opacity: 1;
-  }
-
-  100% {left: 20%; opacity: 1;
-  }
-
+  76% { content: ' Long Term Support'; opacity: 0; padding-left: 100px;}
+  78% { content: ' Long Term Support'; opacity: 1; padding-left: 30px;}
+  97% { content: ' Long Term Support'; opacity: 1; padding-left: 0px;}
+  100% { content: ' Long Term Support'; opacity: 0; padding-left: 0px;}
 }
 
 .hero.block > div > div > h3 {
-  color: var(--light-color);
-  font-size: 30px;
+  color: rgb(255 255 255);
+  font-size: 25px;
   font-weight: 200;
   z-index: 1;
-  position: absolute;
-  top: 54.4%;
-  left: 20%;
-  margin-right: 80px;
-  opacity: 1;
-  animation: fade-in-out-6 2s linear;
-  animation-delay: calc(5 * var(--animation-hero-text-duration) * var(--animation-speed-multiplyer));
-  animation-fill-mode: forwards;
-
+  position: relative;
+  padding-left: 25%;
+  padding-right: 15%;
 }
 
 @keyframes fade-in-out-6 {
@@ -413,25 +270,5 @@
 @media (width >= 900px) {
   .hero {
     padding: 40px 32px;
-  }
-
-  #long-term-support {
-    font-size: 70px;
-    top: 36%;
-  }
-
-  #future-proofing {
-    font-size: 70px;
-    top: 36%;
-  }
-
-  #enhanced-security {
-    font-size: 70px;
-    top: 36%;
-  }
-
-  #improved-performance {
-    font-size: 70px;
-    top: 36%;
   }
 }

@@ -69,7 +69,7 @@
 
   /* hero animation ini */
   --animation-speed-multiplyer: 1;
-  --animation-hero-text-duration: 2s;
+  --animation-hero-text-duration: 8s;
 }
 
 /* fallback fonts */
