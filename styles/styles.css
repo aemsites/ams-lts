@@ -297,8 +297,8 @@ main > .section:first-of-type {
 }
 
 .dark {
-  background-image: url('/icons/spectrum-bg.svg'), linear-gradient(0deg, #7154fa, #eb1000);;
-  background-size: contain;
+  background-size: 100%;
+  background-image: url('/icons/spectrum-bg.svg'), linear-gradient(0deg, #7154fa, #eb1000);
   background-repeat: no-repeat;
   color: var(--light-color);
 
