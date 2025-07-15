@@ -217,31 +217,59 @@
   content: 'Improved Performance';
   animation: new-ani 8s linear infinite;
   animation-fill-mode: forwards;
-  color: rgb(42, 173, 255);
+  color: rgb(42 173 255);
   font-weight: bold;
   font-size: 60px;
 }
 
 @keyframes new-ani {
-  0% { content: ' Improved Performance'; opacity: 0; padding-left: 100px;}
-  2% { content: ' Improved Performance'; opacity: 1; padding-left: 30px;}
-  22% { content: ' Improved Performance'; opacity: 1; padding-left: 0px;}
-  25% { content: ' Improved Performance'; opacity: 0; padding-left: 0px;}
+  0% { content: ' Improved Performance'; opacity: 0; padding-left: 100px;
+  }
+ 
+  2% { content: ' Improved Performance'; opacity: 1; padding-left: 30px;
+  }
+  
+  22% { content: ' Improved Performance'; opacity: 1; padding-left: 0;
+  }
 
-  26% { content: ' Enhanced Security'; opacity: 0; padding-left: 100px;}
-  28% { content: ' Enhanced Security'; opacity: 1; padding-left: 30px;}
-  47% { content: ' Enhanced Security'; opacity: 1; padding-left: 0px;}
-  50% { content: ' Enhanced Security'; opacity: 0; padding-left: 0px;}
+  25% { content: ' Improved Performance'; opacity: 0; padding-left: 0;
+  }
 
-  51% { content: ' Future Proofing'; opacity: 0; padding-left: 100px;}
-  53% { content: ' Future Proofing'; opacity: 1; padding-left: 30px;}
-  72% { content: ' Future Proofing'; opacity: 1; padding-left: 0px;}
-  75% { content: ' Future Proofing'; opacity: 0; padding-left: 0px;}
+  26% { content: ' Enhanced Security'; opacity: 0; padding-left: 100px;
+  }
 
-  76% { content: ' Long Term Support'; opacity: 0; padding-left: 100px;}
-  78% { content: ' Long Term Support'; opacity: 1; padding-left: 30px;}
-  97% { content: ' Long Term Support'; opacity: 1; padding-left: 0px;}
-  100% { content: ' Long Term Support'; opacity: 0; padding-left: 0px;}
+  28% { content: ' Enhanced Security'; opacity: 1; padding-left: 30px;
+  }
+
+  47% { content: ' Enhanced Security'; opacity: 1; padding-left: 0;
+  }
+
+  50% { content: ' Enhanced Security'; opacity: 0; padding-left: 0;
+  }
+
+  51% { content: ' Future Proofing'; opacity: 0; padding-left: 100px;
+  }
+
+  53% { content: ' Future Proofing'; opacity: 1; padding-left: 30px;
+  }
+
+  72% { content: ' Future Proofing'; opacity: 1; padding-left: 0;
+  }
+
+  75% { content: ' Future Proofing'; opacity: 0; padding-left: 0;
+  }
+
+  76% { content: ' Long Term Support'; opacity: 0; padding-left: 100px;
+  }
+
+  78% { content: ' Long Term Support'; opacity: 1; padding-left: 30px;
+  }
+
+  97% { content: ' Long Term Support'; opacity: 1; padding-left: 0;
+  }
+
+  100% { content: ' Long Term Support'; opacity: 0; padding-left: 0;
+  }
 }
 
 .hero.block > div > div > h3 {
