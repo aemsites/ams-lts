@@ -208,6 +208,10 @@ a:hover {
   text-decoration: underline;
 }
 
+main a:any-link {
+  text-decoration: underline;
+}
+
 /* buttons */
 a.button:any-link,
 button {
@@ -308,6 +312,7 @@ main > .section:first-of-type {
   background-repeat: no-repeat;
   color: var(--light-color);
 
+  /* stylelint-disable-next-line no-descending-specificity */
   a {
     color: var(--spectrum-blue-500);
   }
@@ -317,11 +322,11 @@ main > .section:first-of-type {
   }
 
   .accordion details summary:hover, .accordion details summary:focus, .accordion details[open] summary {
-    background-color: var(--dark-color);
+    background-color: rgb(0 0 0 / 60%);
   }
 
   .accordion details[open] .accordion-item-body {
-    background-color: transparent;
+    background-color: rgb(0 0 0 / 30%);
   }
 
   .cards .cards-card-body {

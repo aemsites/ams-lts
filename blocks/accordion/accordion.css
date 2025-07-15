@@ -52,7 +52,7 @@
   }
   
   .accordion details .accordion-item-body {
-    padding: 0 16px;
+    padding: 0 16px 16px;
   }
   
   .accordion details[open] .accordion-item-body {
