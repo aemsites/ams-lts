@@ -181,6 +181,10 @@ pre {
   white-space: pre;
 }
 
+main {
+  overflow: hidden;
+}
+
 main > div {
   margin: 40px 16px;
 }
