@@ -215,7 +215,7 @@
 
 #get-ready-for::after{
   content: 'Improved Performance';
-  animation: new-ani 8s linear infinite;
+  animation: new-ani 12s linear infinite;
   animation-fill-mode: forwards;
   color: rgb(42 173 255);
   font-weight: bold;
@@ -226,45 +226,93 @@
   0% { content: ' Improved Performance'; opacity: 0; padding-left: 100px;
   }
  
-  2% { content: ' Improved Performance'; opacity: 1; padding-left: 30px;
+  3% { content: ' Improved Performance'; opacity: 1; padding-left: 30px;
   }
   
-  22% { content: ' Improved Performance'; opacity: 1; padding-left: 0;
+  9% { content: ' Improved Performance'; opacity: 1; padding-left: 0;
   }
 
-  25% { content: ' Improved Performance'; opacity: 0; padding-left: 0;
+  12.5% { content: ' Improved Performance'; opacity: 0; padding-left: 0;
+  }
+  
+  12.6% { content: ' Improved Security'; opacity: 0; padding-left: 100px;
+  }
+ 
+  15% { content: ' Improved Security'; opacity: 1; padding-left: 30px;
+  }
+  
+  22% { content: ' Improved Security'; opacity: 1; padding-left: 0;
   }
 
-  26% { content: ' Enhanced Security'; opacity: 0; padding-left: 100px;
+  25% { content: ' Improved Security'; opacity: 0; padding-left: 0;
+  }
+  
+  26% { content: ' Java 21'; opacity: 0; padding-left: 100px;
+  }
+ 
+  28% { content: ' Java 21'; opacity: 1; padding-left: 30px;
+  }
+  
+  35% { content: ' Java 21'; opacity: 1; padding-left: 0;
   }
 
-  28% { content: ' Enhanced Security'; opacity: 1; padding-left: 30px;
+  37.5% { content: ' Java 21'; opacity: 0; padding-left: 0;
+  }
+  
+  37.8% { content: ' Upgraded Frameworks'; opacity: 0; padding-left: 100px;
+  }
+ 
+  40% { content: ' Upgraded Frameworks'; opacity: 1; padding-left: 30px;
+  }
+  
+  47% { content: ' Upgraded Frameworks'; opacity: 1; padding-left: 0;
   }
 
-  47% { content: ' Enhanced Security'; opacity: 1; padding-left: 0;
+  50% { content: ' Upgraded Frameworks'; opacity: 0; padding-left: 0;
+  }
+  
+  51% { content: ' Innovation'; opacity: 0; padding-left: 100px;
+  }
+ 
+  54% { content: ' Innovation'; opacity: 1; padding-left: 30px;
+  }
+  
+  59% { content: ' Innovation'; opacity: 1; padding-left: 0;
   }
 
-  50% { content: ' Enhanced Security'; opacity: 0; padding-left: 0;
+  62.5% { content: ' Innovation'; opacity: 0; padding-left: 0;
+  }
+  
+  62.6% { content: ' Modernization'; opacity: 0; padding-left: 100px;
+  }
+ 
+  65% { content: ' Modernization'; opacity: 1; padding-left: 30px;
+  }
+  
+  72% { content: ' Modernization'; opacity: 1; padding-left: 0;
   }
 
-  51% { content: ' Future Proofing'; opacity: 0; padding-left: 100px;
+  75% { content: ' Modernization'; opacity: 0; padding-left: 0;
+  }
+  
+  76% { content: ' Future Proofing'; opacity: 0; padding-left: 100px;
+  }
+ 
+  79% { content: ' Future Proofing'; opacity: 1; padding-left: 30px;
+  }
+  
+  84% { content: ' Future Proofing'; opacity: 1; padding-left: 0;
   }
 
-  53% { content: ' Future Proofing'; opacity: 1; padding-left: 30px;
+  87.5% { content: ' Future Proofing'; opacity: 0; padding-left: 0;
   }
-
-  72% { content: ' Future Proofing'; opacity: 1; padding-left: 0;
+  
+  87.6% { content: ' Long Term Support'; opacity: 0; padding-left: 100px;
   }
-
-  75% { content: ' Future Proofing'; opacity: 0; padding-left: 0;
+ 
+  90% { content: ' Long Term Support'; opacity: 1; padding-left: 30px;
   }
-
-  76% { content: ' Long Term Support'; opacity: 0; padding-left: 100px;
-  }
-
-  78% { content: ' Long Term Support'; opacity: 1; padding-left: 30px;
-  }
-
+  
   97% { content: ' Long Term Support'; opacity: 1; padding-left: 0;
   }
 
