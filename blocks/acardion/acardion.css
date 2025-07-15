@@ -67,7 +67,7 @@
   }
 
   .acardion-item-label:hover {
-    background-color: #A3E4D7;
+    background-color: var(--spectrum-blue-400);
   }
   
 /* Arrow indicator */
@@ -88,7 +88,7 @@
   .acardion-preview-text {
     font-size: 14px;
     font-weight: 400;
-    color: gray; /* Use a lighter color to differentiate from the header */
+    color: var(--dark-color); /* Use a lighter color to differentiate from the header */
     margin-top: 8px; /* Add spacing below the header */
     white-space: nowrap; /* Ensure preview text stays on a single line */
     overflow: hidden; /* Prevent overflow if text is too long */
