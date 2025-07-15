@@ -296,6 +296,12 @@ main > .section:first-of-type {
   }
 }
 
+.section.black {
+  background-color: rgb(0 0 0 / 60%);
+  color: var(--light-color);
+  padding: 40px 0 100px;
+}
+
 .dark {
   background-size: 100%;
   background-image: url('/icons/spectrum-bg.svg'), linear-gradient(0deg, #7154fa, #eb1000);
