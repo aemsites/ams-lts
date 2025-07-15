@@ -312,6 +312,7 @@ main > .section:first-of-type {
   background-repeat: no-repeat;
   color: var(--light-color);
 
+  /* stylelint-disable-next-line no-descending-specificity */
   a {
     color: var(--spectrum-blue-500);
   }
