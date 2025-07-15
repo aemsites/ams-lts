@@ -292,6 +292,12 @@ main > .section:first-of-type {
   }
 }
 
+.section.black {
+  background-color: rgb(0 0 0 / 60%);
+  color: var(--light-color);
+  padding: 40px 0 70px;
+}
+
 .dark {
   background: linear-gradient(0deg, var(--spectrum-purple-1000), var(--spectrum-magenta-900), var(--spectrum-blue-1000));
   color: var(--light-color);
