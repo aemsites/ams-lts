@@ -191,7 +191,7 @@
   100% { transform: perspective(300px) rotateY(25deg) rotate(0deg); }
 }
 
-#adobe-experience-manager-65-long-term-support-is-here {
+.hero.block > div > div > h1 {
   color: white;
   font-size: 41px;
   font-weight: 200;
@@ -203,7 +203,7 @@
   padding-right: 15%;
 }
 
-#get-ready-for {
+.hero.block > div > div > h2 {
   color: white;
   font-size: 25px;
   font-weight: 200;
@@ -213,7 +213,7 @@
   padding-left: 25%;
 }
 
-#get-ready-for::after{
+.hero.block > div > div > h2::after{
   content: 'Improved Performance';
   animation: new-ani 12s linear infinite;
   animation-fill-mode: forwards;
