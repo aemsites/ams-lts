@@ -62,6 +62,7 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 130%;
+    border-radius: 0 0 16px 16px;
     transition: background-color 0.2s, padding 0.3s ease; /* Smooth transition for padding */
     color: black; /* Ensures accordion label text is black */
   }
@@ -114,6 +115,7 @@
   /* Reduce padding when preview text is hidden */
   .acardion-item[open] .acardion-item-label {
     padding: 8px 16px; /* Reduce padding to remove blank white space */
+    border-radius: 0;
   }
 
 /* Accordion body */
@@ -133,6 +135,7 @@
   .acardion-item[open] .acardion-item-body {
     max-height: 500px; /* Adjust based on expected content height */
     padding: 16px; /* Restores padding when expanded */
+    border-radius: 0 0 16px 16px;
   }
 
   /* Responsive styles */
